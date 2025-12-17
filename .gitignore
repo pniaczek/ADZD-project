@@ -1,0 +1,24 @@
+﻿# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# Artifacts / runtime
+logs/
+models/
+reports/figures/
+data/predictions/
+data/metrics/
+logs/spark-events/
+
+# OS
+.DS_Store
+Thumbs.db

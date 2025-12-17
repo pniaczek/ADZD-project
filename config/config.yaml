@@ -1,0 +1,23 @@
+project:
+  name: alpha-vantage-spark
+  environment: local        # local | aws
+  timezone: US/Eastern
+
+paths:
+  raw: data/raw
+  processed: data/processed
+  features: data/features
+  models: data/models
+  spark_logs: logs/spark-events
+
+alpha_vantage:
+  api_key: ""
+  function: FX_DAILY
+  from_symbol: EUR
+  to_symbol: USD
+  output_size: full
+
+pipeline:
+  ingest: true
+  preprocess: ohlc_intraday
+  model: sarima
