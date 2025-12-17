@@ -5,6 +5,7 @@ from pyspark.sql.functions import (
 from pyspark.sql.window import Window
 from pyspark.sql.types import DateType
 from pathlib import Path
+from config.loader import load_config
 from utils.logger import setup_logger
 
 
@@ -15,11 +16,28 @@ def main():
     log_dir=Path("logs/spark"),
     )
 
-    spark = (
-        SparkSession.builder
-        .appName("forex-daily-preprocess")
-        .getOrCreate()
-    )
+    # spark = (
+    #     SparkSession.builder
+    #     .appName("forex-daily-preprocess")
+    #     .getOrCreate()
+    # )
+
+
+    cfg = load_config()
+    env = cfg.get("project", {}).get("environment", "local")
+    master = cfg.get("spark", {}).get("master", {}).get(env)
+
+    spark_builder = SparkSession.builder.appName("forex-daily-preprocess")
+    if master:
+        spark_builder = spark_builder.master(master)
+
+    event_cfg = cfg.get("spark", {}).get("event_log", {}) or {}
+    if event_cfg.get("enabled") and event_cfg.get("dir"):
+        spark_builder = spark_builder.config("spark.eventLog.enabled", "true").config(
+            "spark.eventLog.dir", str(Path(event_cfg.get("dir")).absolute())
+        )
+
+    spark = spark_builder.getOrCreate()
 
     input_path = "data/raw/alpha_vantage/market=forex/pair=EUR_USD/frequency=daily/*"
     output_path = "data/processed/forex_daily/pair=EUR_USD"

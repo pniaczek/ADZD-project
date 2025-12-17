@@ -40,12 +40,33 @@ def main():
     cfg = load_config()
     av = cfg["alpha_vantage"]
 
-    # SparkSession – BEZ mastera
-    spark = (
-        SparkSession.builder
-        .appName("alpha-vantage-fx-daily-ingest")
-        .getOrCreate()
-    )
+    # # SparkSession – BEZ mastera
+    # spark = (
+    #     SparkSession.builder
+    #     .appName("alpha-vantage-fx-daily-ingest")
+    #     .getOrCreate()
+    # )
+
+    # SparkSession – use config from config/spark.yaml (master, eventLog)
+    env = cfg.get("project", {}).get("environment", "local")
+    master = cfg.get("spark", {}).get("master", {}).get(env)
+
+    spark_builder = SparkSession.builder.appName("alpha-vantage-fx-daily-ingest")
+    if master:
+        spark_builder = spark_builder.master(master)
+
+    # enable event logging if configured
+    event_cfg = cfg.get("spark", {}).get("event_log", {}) or {}
+    if event_cfg.get("enabled"):
+        event_dir = event_cfg.get("dir")
+        if event_dir:
+            # make absolute path for local runs
+            event_dir = str(Path(event_dir).absolute())
+            spark_builder = spark_builder.config("spark.eventLog.enabled", "true").config(
+                "spark.eventLog.dir", event_dir
+            )
+
+    spark = spark_builder.getOrCreate()
 
     raw_json = fetch_alpha_vantage(cfg)
 
