@@ -1,0 +1,25 @@
+# ===== Core =====
+numpy>=1.24,<2.0
+pandas>=2.0,<2.2
+pyyaml>=6.0
+python-dateutil
+requests
+
+# ===== Modeling =====
+scikit-learn>=1.3,<1.5
+statsmodels>=0.14,<0.15
+
+# ===== Spark =====
+pyspark==3.4.2
+
+# ===== IO =====
+pyarrow>=14.0
+fastparquet
+
+# ===== Visualization =====
+matplotlib>=3.7
+seaborn>=0.12
+
+# ===== Utilities =====
+tqdm
+loguru
