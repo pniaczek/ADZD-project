@@ -1,24 +1,62 @@
-﻿# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
+# =========================
+# Python / venv
+# =========================
 .venv/
 venv/
-.env
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.log
 
-# IDE
-.vscode/
-.idea/
-
-# Artifacts / runtime
-logs/
-models/
-reports/figures/
-data/predictions/
-data/metrics/
-logs/spark-events/
-
-# OS
+# =========================
+# OS / editor
+# =========================
 .DS_Store
 Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# Project runtime artifacts
+# =========================
+deps.zip
+logs/
+reports/
+data/
+models/   # jeśli trzymasz model artifacts lokalnie (a nie w repo)
+*.parquet
+*.crc
+
+# =========================
+# Spark / Hadoop artifacts
+# =========================
+spark-events/
+eventlog/
+*.inprogress
+/tmp/
+spark-warehouse/
+metastore_db/
+derby.log
+
+# =========================
+# Credentials / secrets
+# =========================
+**/config.yaml
+**/config.local.yaml
+**/*.pem
+**/*.key
+**/.env

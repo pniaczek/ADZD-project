@@ -1,0 +1,57 @@
+logStore:
+  type: "local"
+  local:
+    directory: "/mnt/events"
+
+historyServer:
+  store:
+    maxDiskUsage: 1g
+    hybridStore:
+      enabled: true
+
+sparkDaemon:
+  memory: "1g"
+
+resources:
+  limits:
+    memory: 2Gi
+  requests:
+    cpu: 500m
+    memory: 1Gi
+
+affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - mcp-apache-spark-history-server-control-plane
+
+volumes:
+  - name: example-events
+    persistentVolumeClaim:
+      claimName: example-events
+
+volumeMounts:
+  - mountPath: /mnt/events/
+    name: example-events
+
+service:
+  type: NodePort
+  nodePort: 31808 # must match kind hostPort
+
+livenessProbe:
+  initialDelaySeconds: 30
+  timeoutSeconds: 3
+  periodSeconds: 5
+  successThreshold: 1
+  failureThreshold: 10
+
+readinessProbe:
+  initialDelaySeconds: 30
+  timeoutSeconds: 3
+  periodSeconds: 5
+  successThreshold: 1
+  failureThreshold: 10

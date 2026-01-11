@@ -1,0 +1,100 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: Code Quality Checks
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@v2
+
+    - name: Install Task
+      uses: arduino/setup-task@v2
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        version: 3.x
+
+    - name: Run pre-commit
+      run: task pre-commit
+
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.12"]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@v2
+
+    - name: Install Task
+      uses: arduino/setup-task@v2
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        version: 3.x
+
+    - name: Install Helm
+      run: |
+        set -euo pipefail
+        curl -sSL https://get.helm.sh/helm-v3.19.3-linux-amd64.tar.gz -o helm.tar.gz
+        tar -zxvf helm.tar.gz
+        sudo mv linux-amd64/helm /usr/local/bin/helm
+        rm helm.tar.gz
+        rm -rf linux-amd64
+        helm version --short
+
+    - name: Install helm unittest
+      run: helm plugin install https://github.com/helm-unittest/helm-unittest --version 1.0.3
+
+    - name: Set up Python ${{ matrix.python-version }}
+      run: uv python install ${{ matrix.python-version }}
+
+    - name: Lint with ruff
+      run: task lint
+
+    # TODO: Re-enable mypy after fixing type annotations
+    # - name: Type check with mypy
+    #   run: uv run mypy *.py --ignore-missing-imports
+
+    - name: unit test
+      run: task test
+
+    - name: helm chart test
+      run: task test-helm
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      if: success()
+
+  integration:
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@v2
+
+    - name: Install Task
+      uses: arduino/setup-task@v2
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        version: 3.x
+
+    - name: e2e
+      run: task test-e2e

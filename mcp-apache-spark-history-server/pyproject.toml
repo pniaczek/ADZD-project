@@ -1,0 +1,105 @@
+[project]
+name = "mcp-apache-spark-history-server"
+dynamic = ["version"]
+description = "Model Context Protocol (MCP) server for Apache Spark History Server with job comparison and analytics"
+readme = "README.md"
+authors = [
+    {name = "Manabu McCloskey", email = "Manabu.McCloskey@gmail.com"},
+    {name = "Vara Bonthu", email = "vara.bonthu@gmail.com"}
+]
+license = {text = "Apache-2.0"}
+requires-python = ">=3.12"
+keywords = ["spark", "mcp", "analytics", "performance", "history-server", "model-context-protocol"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Monitoring",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = [
+    "mcp[cli]~=1.9",
+    "pyyaml~=6.0",
+    "requests~=2.32.4",
+    "pydantic~=2.4",
+    "boto3~=1.34",
+    "pydantic-settings>=2.9.1",
+    "requests[socks]>=2.31.0",
+    "pysocks>=1.7.1"
+]
+
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/spark_history_mcp"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/src"
+]
+
+[tool.hatch.version] # Get version from tag
+source = "vcs"
+
+[tool.hatch.version.raw-options]
+version_scheme = "no-guess-dev"
+
+[project.scripts]
+spark-mcp = "spark_history_mcp.core.main:main"
+
+[project.urls]
+Homepage = "https://github.com/kubeflow/mcp-apache-spark-history-server"
+Repository = "https://github.com/kubeflow/mcp-apache-spark-history-server"
+Issues = "https://github.com/kubeflow/mcp-apache-spark-history-server/issues"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "B", "A", "S", "T20"]
+ignore = ["E501", "S101"]
+
+[tool.ruff.lint.per-file-ignores]
+"test_*.py" = ["S101"]
+
+[tool.black]
+line-length = 88
+target-version = ['py312']
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false  # Start with false, gradually enable
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "."]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "--cov=. --cov-report=term-missing"
+pythonpath = [".", "src"]
+asyncio_mode = "auto"
+
+[dependency-groups]
+dev = [
+    "pytest~=8.4",
+    "pytest-cov~=4.0",
+    "black~=23.0",
+    "ruff~=0.1",
+    "mypy~=1.7",
+    "pre-commit~=3.0",
+    "pytest-asyncio~=1.0",
+]
+
+
+[[tool.uv.index]]
+name = "pypi-test"
+url = "https://test.pypi.org/simple/"
+publish-url = "https://test.pypi.org/legacy/"
+explicit = true

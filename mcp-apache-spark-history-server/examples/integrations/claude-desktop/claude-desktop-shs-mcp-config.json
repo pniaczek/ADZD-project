@@ -1,0 +1,15 @@
+{
+    "mcpServers": {
+        "mcp-apache-spark-history-server": {
+            "command": "uv",
+            "args": [
+                "run",
+                "--project",
+                "/path/to/mcp-apache-spark-history-server",
+                "-m",
+                "spark_history_mcp.core.main"
+            ],
+            "cwd": "/path/to/mcp-apache-spark-history-server"
+        }
+    }
+}

@@ -1,0 +1,62 @@
+repos:
+  # Pre-commit hooks for general file hygiene
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+        exclude: ^deploy/kubernetes/helm/.*\.yaml$
+        args: [--allow-multiple-documents]
+      - id: check-json
+      - id: check-toml
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+      - id: mixed-line-ending
+        args: ['--fix=lf']
+
+  # Python linting and formatting with Ruff
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.12.3
+    hooks:
+      # Run the linter
+      - id: ruff-check
+        types_or: [python, pyi]
+        args: [--fix]
+      # Run the formatter
+      - id: ruff-format
+        types_or: [python, pyi]
+
+  # Type checking with mypy (temporarily disabled - TODO: fix type annotations)
+  # - repo: https://github.com/pre-commit/mirrors-mypy
+  #   rev: v1.11.2
+  #   hooks:
+  #     - id: mypy
+  #       additional_dependencies: [types-PyYAML, types-requests]
+  #       args: [--ignore-missing-imports]
+
+  # Security scanning
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.8.6
+    hooks:
+      - id: bandit
+        args: [--recursive, --format, json, --output, bandit-report.json]
+        exclude: ^tests/
+
+  # Custom security check for config files
+  - repo: local
+    hooks:
+      - id: check-config-security
+        name: Check for hardcoded credentials in config files
+        entry: python pre-commit-scripts/check-config-security.py
+        language: system
+        files: ^config.*\.ya?ml$
+        pass_filenames: false
+
+  # Documentation and markdown
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.45.0
+    hooks:
+      - id: markdownlint
+        args: [--disable, MD013, MD033, MD041]  # Disable line length, HTML, first line rules

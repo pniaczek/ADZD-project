@@ -1,0 +1,43 @@
+image:
+  repository: mcp-apache-spark-history-server
+  pullPolicy: IfNotPresent
+  tag: latest
+replicaCount: 1
+
+livenessProbe:
+  httpGet: null
+  tcpSocket:
+    port: 18888
+  initialDelaySeconds: 30
+  periodSeconds: 10
+  timeoutSeconds: 5
+  failureThreshold: 3
+
+readinessProbe:
+  httpGet: null
+  tcpSocket:
+    port: 18888
+  initialDelaySeconds: 5
+  periodSeconds: 5
+  timeoutSeconds: 3
+  failureThreshold: 3
+
+startupProbe:
+  httpGet: null
+  tcpSocket:
+    port: 18888
+  initialDelaySeconds: 10
+  periodSeconds: 5
+  timeoutSeconds: 3
+  failureThreshold: 12
+
+service:
+  type: NodePort
+  nodePort: 31888 # must match kind hostPort
+
+# MCP server configuration
+config:
+  servers:
+    default:
+      default: true
+      url: "http://spark-history-server-0.spark-history-server.default.svc.cluster.local:18080"
