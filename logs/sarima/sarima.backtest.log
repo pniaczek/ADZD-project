@@ -1,0 +1,39 @@
+2026-01-10 14:08:51,175 | INFO | sarima.backtest | SARIMA backtest ingest_date=2026-01-08, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=90
+2026-01-10 14:08:51,209 | WARNING | sarima.backtest | Skipping EUR_USD: too short series len=93
+2026-01-10 14:08:51,222 | WARNING | sarima.backtest | Skipping GBP_USD: too short series len=93
+2026-01-10 14:08:51,233 | WARNING | sarima.backtest | Skipping USD_JPY: too short series len=93
+2026-01-10 14:12:31,813 | INFO | sarima.backtest | SARIMA backtest ingest_date=2026-01-08, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=90
+2026-01-10 14:12:31,847 | WARNING | sarima.backtest | Skipping EUR_USD: too short series len=93
+2026-01-10 14:12:31,860 | WARNING | sarima.backtest | Skipping GBP_USD: too short series len=93
+2026-01-10 14:12:31,872 | WARNING | sarima.backtest | Skipping USD_JPY: too short series len=93
+2026-01-10 14:16:59,630 | INFO | sarima.backtest | SARIMA backtest ingest_date=2026-01-08, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=90
+2026-01-10 14:16:59,663 | WARNING | sarima.backtest | Skipping EUR_USD: too short series len=93
+2026-01-10 14:16:59,676 | WARNING | sarima.backtest | Skipping GBP_USD: too short series len=93
+2026-01-10 14:16:59,687 | WARNING | sarima.backtest | Skipping USD_JPY: too short series len=93
+2026-01-10 14:33:19,631 | INFO | sarima.backtest | SARIMA backtest ingest_date=2026-01-08, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=30, min_train_size=60, order=(1, 0, 1), seasonal_order=(0, 0, 0, 0)
+2026-01-10 14:33:19,962 | INFO | sarima.backtest | Computed metrics for pairs: 3
+2026-01-10 14:33:19,962 | INFO | sarima.backtest | Done.
+2026-01-10 14:50:01,933 | INFO | sarima.backtest | SARIMA backtest ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=30, min_train_size=60, order=(1, 0, 1), seasonal_order=(0, 0, 0, 0)
+2026-01-10 14:50:04,190 | INFO | sarima.backtest | Computed metrics for pairs: 3
+2026-01-10 14:50:04,191 | INFO | sarima.backtest | Done.
+2026-01-10 15:05:34,106 | INFO | sarima.backtest | SARIMA backtest ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=30, min_train_size=60, order=(1, 0, 1), seasonal_order=(0, 0, 0, 0)
+2026-01-10 15:05:35,767 | INFO | sarima.backtest | Computed metrics for pairs: 3
+2026-01-10 15:05:35,768 | INFO | sarima.backtest | Done.
+2026-01-10 15:34:49,750 | INFO | sarima.backtest | SARIMA backtest ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=30, min_train_size=60, order=(1, 0, 1), seasonal_order=(0, 0, 0, 0)
+2026-01-10 15:34:51,343 | INFO | sarima.backtest | Computed metrics for pairs: 3
+2026-01-10 15:34:51,344 | INFO | sarima.backtest | Done.
+2026-01-10 15:50:02,743 | INFO | sarima.backtest | SARIMA backtest ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=30, min_train_size=60, order=(1, 0, 1), seasonal_order=(0, 0, 0, 0)
+2026-01-10 15:50:04,362 | INFO | sarima.backtest | Computed metrics for pairs: 3
+2026-01-10 15:50:04,362 | INFO | sarima.backtest | Done.
+2026-01-10 15:57:03,496 | INFO | sarima.backtest | SARIMA backtest ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=30, min_train_size=60, order=(1, 0, 1), seasonal_order=(0, 0, 0, 0)
+2026-01-10 15:57:05,093 | INFO | sarima.backtest | Computed metrics for pairs: 3
+2026-01-10 15:57:05,094 | INFO | sarima.backtest | Done.
+2026-01-10 16:10:56,790 | INFO | sarima.backtest | SARIMA backtest ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=30, min_train_size=60, order=(1, 0, 1), seasonal_order=(0, 0, 0, 0)
+2026-01-10 16:10:58,446 | INFO | sarima.backtest | Computed metrics for pairs: 3
+2026-01-10 16:10:58,447 | INFO | sarima.backtest | Done.
+2026-01-10 16:13:57,382 | INFO | sarima.backtest | SARIMA backtest ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=30, min_train_size=60, order=(1, 0, 1), seasonal_order=(0, 0, 0, 0)
+2026-01-10 16:13:59,002 | INFO | sarima.backtest | Computed metrics for pairs: 3
+2026-01-10 16:13:59,002 | INFO | sarima.backtest | Done.
+2026-01-14 15:39:49,505 | INFO | sarima.backtest | SARIMA backtest ingest_date=2026-01-14, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=30, min_train_size=60, order=(1, 0, 1), seasonal_order=(0, 0, 0, 0)
+2026-01-14 15:39:50,441 | INFO | sarima.backtest | Computed metrics for pairs: 3
+2026-01-14 15:39:50,442 | INFO | sarima.backtest | Done.

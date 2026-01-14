@@ -1,0 +1,2 @@
+2025-12-18 00:20:05,590 | INFO | naive.predict | Running NAIVE forecast for EUR_USD
+2025-12-18 00:20:05,625 | INFO | naive.predict | NAIVE forecast saved to data/predictions/naive/pair=EUR_USD/run_date=2025-12-18T00:20:05.623318+00:00

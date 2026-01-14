@@ -1,0 +1,90 @@
+2025-12-18 00:00:04,481 | INFO | naive.backtest | Starting NAIVE backtest for EUR_USD
+2025-12-18 00:00:04,510 | INFO | naive.backtest | Backtest observations after NaN filter: 101
+2025-12-18 00:00:04,511 | INFO | naive.backtest | NAIVE backtest completed successfully
+2025-12-18 00:00:04,511 | INFO | naive.backtest | {
+  "model": "NAIVE",
+  "pair": "EUR_USD",
+  "backtest_days": 180,
+  "metrics": {
+    "mae": 0.0033722772277227724,
+    "rmse": 0.004440809844972863,
+    "mape": 0.0028950765129140397,
+    "observations": 101
+  },
+  "run_timestamp": "2025-12-18T00:00:04.511316+00:00"
+}
+2025-12-18 00:05:00,581 | INFO | naive.backtest | Starting NAIVE backtest for EUR_USD
+2025-12-18 00:05:00,608 | INFO | naive.backtest | Backtest observations after NaN filter: 101
+2025-12-18 00:05:00,610 | INFO | naive.backtest | NAIVE backtest completed successfully
+2025-12-18 00:05:00,610 | INFO | naive.backtest | {
+  "model": "NAIVE",
+  "pair": "EUR_USD",
+  "backtest_days": 180,
+  "metrics": {
+    "mae": 0.0033722772277227724,
+    "rmse": 0.004440809844972863,
+    "mape": 0.0028950765129140397,
+    "observations": 101
+  },
+  "run_timestamp": "2025-12-18T00:05:00.609774+00:00"
+}
+2025-12-18 00:08:20,849 | INFO | naive.backtest | Starting NAIVE backtest for EUR_USD
+2025-12-18 00:08:20,876 | INFO | naive.backtest | Backtest observations after NaN filter: 101
+2025-12-18 00:08:20,878 | INFO | naive.backtest | NAIVE backtest completed successfully
+2025-12-18 00:08:20,878 | INFO | naive.backtest | {
+  "model": "NAIVE",
+  "pair": "EUR_USD",
+  "backtest_days": 180,
+  "metrics": {
+    "mae": 0.0033722772277227724,
+    "rmse": 0.004440809844972863,
+    "mape": 0.0028950765129140397,
+    "observations": 101
+  },
+  "run_timestamp": "2025-12-18T00:08:20.877879+00:00"
+}
+2025-12-18 00:11:43,623 | INFO | naive.backtest | Starting NAIVE backtest for EUR_USD
+2025-12-18 00:11:43,651 | INFO | naive.backtest | Backtest observations after NaN filter: 101
+2025-12-18 00:11:43,652 | INFO | naive.backtest | NAIVE backtest completed successfully
+2025-12-18 00:11:43,652 | INFO | naive.backtest | {
+  "model": "NAIVE",
+  "pair": "EUR_USD",
+  "backtest_days": 180,
+  "metrics": {
+    "mae": 0.0033722772277227724,
+    "rmse": 0.004440809844972863,
+    "mape": 0.0028950765129140397,
+    "observations": 101
+  },
+  "run_timestamp": "2025-12-18T00:11:43.652292+00:00"
+}
+2025-12-18 00:16:41,892 | INFO | naive.backtest | Starting NAIVE backtest for EUR_USD
+2025-12-18 00:16:41,920 | INFO | naive.backtest | Backtest observations after NaN filter: 101
+2025-12-18 00:16:41,921 | INFO | naive.backtest | NAIVE backtest completed successfully
+2025-12-18 00:16:41,922 | INFO | naive.backtest | {
+  "model": "NAIVE",
+  "pair": "EUR_USD",
+  "backtest_days": 180,
+  "metrics": {
+    "mae": 0.0033722772277227724,
+    "rmse": 0.004440809844972863,
+    "mape": 0.0028950765129140397,
+    "observations": 101
+  },
+  "run_timestamp": "2025-12-18T00:16:41.921473+00:00"
+}
+2025-12-18 00:20:03,892 | INFO | naive.backtest | Starting NAIVE backtest for EUR_USD
+2025-12-18 00:20:03,921 | INFO | naive.backtest | Backtest observations after NaN filter: 101
+2025-12-18 00:20:03,922 | INFO | naive.backtest | NAIVE backtest completed successfully
+2025-12-18 00:20:03,923 | INFO | naive.backtest | {
+  "model": "NAIVE",
+  "pair": "EUR_USD",
+  "backtest_days": 180,
+  "metrics": {
+    "mae": 0.0033722772277227724,
+    "rmse": 0.004440809844972863,
+    "mape": 0.0028950765129140397,
+    "observations": 101
+  },
+  "run_timestamp": "2025-12-18T00:20:03.922566+00:00"
+}

@@ -1,0 +1,82 @@
+2025-12-17 16:48:11,582 | INFO | spark.ingest.alpha_vantage | Dane zapisane do: data/raw/alpha_vantage/market=forex/pair=EUR_USD/frequency=daily/ingest_date=2025-12-17
+2025-12-17 16:48:12,111 | INFO | spark.ingest.alpha_vantage | Liczba rekordów: 5000
+2025-12-17 22:54:34,813 | INFO | spark.ingest.alpha_vantage | Dane zapisane do: data/raw/alpha_vantage/market=forex/pair=EUR_USD/frequency=daily/ingest_date=2025-12-17
+2025-12-17 22:54:35,317 | INFO | spark.ingest.alpha_vantage | Liczba rekordów: 5000
+2025-12-17 23:24:05,651 | INFO | spark.ingest.alpha_vantage | Dane zapisane do: data/raw/alpha_vantage/market=forex/pair=EUR_USD/frequency=daily/ingest_date=2025-12-17
+2025-12-17 23:24:06,216 | INFO | spark.ingest.alpha_vantage | Liczba rekordów: 5000
+2025-12-17 23:31:11,929 | INFO | spark.ingest.alpha_vantage | Dane zapisane do: data/raw/alpha_vantage/market=forex/pair=EUR_USD/frequency=daily/ingest_date=2025-12-17
+2025-12-17 23:31:12,437 | INFO | spark.ingest.alpha_vantage | Liczba rekordów: 5000
+2025-12-17 23:42:50,903 | INFO | spark.ingest.alpha_vantage | Dane zapisane do: data/raw/alpha_vantage/market=forex/pair=EUR_USD/frequency=daily/ingest_date=2025-12-17
+2025-12-17 23:42:51,351 | INFO | spark.ingest.alpha_vantage | Liczba rekordów: 5000
+2025-12-17 23:45:31,093 | INFO | spark.ingest.alpha_vantage | Dane zapisane do: data/raw/alpha_vantage/market=forex/pair=EUR_USD/frequency=daily/ingest_date=2025-12-17
+2025-12-17 23:45:31,589 | INFO | spark.ingest.alpha_vantage | Liczba rekordów: 5000
+2025-12-17 23:50:37,299 | INFO | spark.ingest.alpha_vantage | Dane zapisane do: data/raw/alpha_vantage/market=forex/pair=EUR_USD/frequency=daily/ingest_date=2025-12-17
+2025-12-17 23:50:37,858 | INFO | spark.ingest.alpha_vantage | Liczba rekordów: 5000
+2025-12-17 23:55:19,729 | INFO | spark.ingest.alpha_vantage | Dane zapisane do: data/raw/alpha_vantage/market=forex/pair=EUR_USD/frequency=daily/ingest_date=2025-12-17
+2025-12-17 23:55:20,224 | INFO | spark.ingest.alpha_vantage | Liczba rekordów: 5000
+2025-12-17 23:59:41,752 | INFO | spark.ingest.alpha_vantage | Dane zapisane do: data/raw/alpha_vantage/market=forex/pair=EUR_USD/frequency=daily/ingest_date=2025-12-17
+2025-12-17 23:59:42,248 | INFO | spark.ingest.alpha_vantage | Liczba rekordów: 5000
+2025-12-18 00:04:38,220 | INFO | spark.ingest.alpha_vantage | Dane zapisane do: data/raw/alpha_vantage/market=forex/pair=EUR_USD/frequency=daily/ingest_date=2025-12-18
+2025-12-18 00:04:38,642 | INFO | spark.ingest.alpha_vantage | Liczba rekordów: 5000
+2025-12-18 00:07:57,549 | INFO | spark.ingest.alpha_vantage | Dane zapisane do: data/raw/alpha_vantage/market=forex/pair=EUR_USD/frequency=daily/ingest_date=2025-12-18
+2025-12-18 00:07:58,048 | INFO | spark.ingest.alpha_vantage | Liczba rekordów: 5000
+2025-12-18 00:11:20,752 | INFO | spark.ingest.alpha_vantage | Dane zapisane do: data/raw/alpha_vantage/market=forex/pair=EUR_USD/frequency=daily/ingest_date=2025-12-18
+2025-12-18 00:11:21,359 | INFO | spark.ingest.alpha_vantage | Liczba rekordów: 5000
+2025-12-18 00:16:19,311 | INFO | spark.ingest.alpha_vantage | Dane zapisane do: data/raw/alpha_vantage/market=forex/pair=EUR_USD/frequency=daily/ingest_date=2025-12-18
+2025-12-18 00:16:19,719 | INFO | spark.ingest.alpha_vantage | Liczba rekordów: 5000
+2025-12-18 00:19:40,561 | INFO | spark.ingest.alpha_vantage | Dane zapisane do: data/raw/alpha_vantage/market=forex/pair=EUR_USD/frequency=daily/ingest_date=2025-12-18
+2025-12-18 00:19:40,966 | INFO | spark.ingest.alpha_vantage | Liczba rekordów: 5000
+2026-01-08 10:55:28,434 | INFO | spark.ingest.alpha_vantage | Dane zapisane do: data/raw/alpha_vantage/market=forex/pair=EUR_USD/frequency=daily/ingest_date=2026-01-08
+2026-01-08 10:55:28,766 | INFO | spark.ingest.alpha_vantage | Liczba rekordów: 5000
+2026-01-08 19:56:32,062 | INFO | spark.ingest.alpha_vantage | Ingest start. pairs=[('EUR', 'USD'), ('GBP', 'USD'), ('USD', 'JPY')], parallelism=2, ingest_date=2026-01-08
+2026-01-08 20:04:46,822 | INFO | spark.ingest.alpha_vantage | Ingest start. pairs=[('EUR', 'USD'), ('GBP', 'USD'), ('USD', 'JPY')], parallelism=1, ingest_date=2026-01-08
+2026-01-08 20:12:18,512 | INFO | spark.ingest.alpha_vantage | Ingest start. pairs=[('EUR', 'USD'), ('GBP', 'USD'), ('USD', 'JPY')], parallelism=1, ingest_date=2026-01-08, min_sleep=1.1
+2026-01-08 20:17:29,247 | INFO | spark.ingest.alpha_vantage | Ingest start. pairs=[('EUR', 'USD'), ('GBP', 'USD'), ('USD', 'JPY')], parallelism=1, ingest_date=2026-01-08, min_sleep=1.1
+2026-01-08 20:24:19,907 | INFO | spark.ingest.alpha_vantage | Ingest start. pairs=[('EUR', 'USD'), ('GBP', 'USD'), ('USD', 'JPY')], parallelism=1, ingest_date=2026-01-08, min_sleep=1.1
+2026-01-08 20:25:32,881 | WARNING | spark.ingest.alpha_vantage | Zapisano błędy ingestu: 1 do data/raw/alpha_vantage_errors/market=forex/frequency=daily/ingest_date=2026-01-08
+2026-01-08 20:25:32,881 | INFO | spark.ingest.alpha_vantage | Dane zapisane do: data/raw/alpha_vantage/market=forex/frequency=daily (partitionBy pair, ingest_date)
+2026-01-08 20:25:36,551 | INFO | spark.ingest.alpha_vantage | Liczba rekordów OK: 300
+2026-01-08 20:39:10,949 | INFO | spark.ingest.alpha_vantage | Ingest start. pairs=[('EUR', 'USD'), ('GBP', 'USD'), ('USD', 'JPY')], parallelism=1, ingest_date=2026-01-08, min_sleep=1.1
+2026-01-08 20:39:24,795 | INFO | spark.ingest.alpha_vantage | Dane OK zapisane do: data/raw/alpha_vantage/market=forex/frequency=daily (partitionBy pair, ingest_date)
+2026-01-08 20:39:24,796 | INFO | spark.ingest.alpha_vantage | Liczba rekordów OK: 300
+2026-01-08 20:39:24,796 | INFO | spark.ingest.alpha_vantage | Liczba rekordów błędów: 0
+2026-01-10 14:49:19,190 | INFO | spark.ingest.alpha_vantage | Ingest start. pairs=[('EUR', 'USD'), ('GBP', 'USD'), ('USD', 'JPY')], parallelism=1, ingest_date=2026-01-10, min_sleep=1.1
+2026-01-10 14:49:35,483 | INFO | spark.ingest.alpha_vantage | Dane OK zapisane do: data/raw/alpha_vantage/market=forex/frequency=daily (partitionBy pair, ingest_date)
+2026-01-10 14:49:35,483 | INFO | spark.ingest.alpha_vantage | Liczba rekordów OK: 15000
+2026-01-10 14:49:35,484 | INFO | spark.ingest.alpha_vantage | Liczba rekordów błędów: 0
+2026-01-10 15:04:50,462 | INFO | spark.ingest.alpha_vantage | Ingest start. pairs=[('EUR', 'USD'), ('GBP', 'USD'), ('USD', 'JPY')], parallelism=1, ingest_date=2026-01-10, min_sleep=1.1
+2026-01-10 15:05:07,504 | INFO | spark.ingest.alpha_vantage | Dane OK zapisane do: data/raw/alpha_vantage/market=forex/frequency=daily (partitionBy pair, ingest_date)
+2026-01-10 15:05:07,504 | INFO | spark.ingest.alpha_vantage | Liczba rekordów OK: 15000
+2026-01-10 15:05:07,505 | INFO | spark.ingest.alpha_vantage | Liczba rekordów błędów: 0
+2026-01-10 15:34:07,226 | INFO | spark.ingest.alpha_vantage | Ingest start. pairs=[('EUR', 'USD'), ('GBP', 'USD'), ('USD', 'JPY')], parallelism=1, ingest_date=2026-01-10, min_sleep=1.1
+2026-01-10 15:34:23,153 | INFO | spark.ingest.alpha_vantage | Dane OK zapisane do: data/raw/alpha_vantage/market=forex/frequency=daily (partitionBy pair, ingest_date)
+2026-01-10 15:34:23,153 | INFO | spark.ingest.alpha_vantage | Liczba rekordów OK: 15000
+2026-01-10 15:34:23,153 | INFO | spark.ingest.alpha_vantage | Liczba rekordów błędów: 0
+2026-01-10 15:56:23,190 | INFO | spark.ingest.alpha_vantage | Ingest start. pairs=[('EUR', 'USD'), ('GBP', 'USD'), ('USD', 'JPY')], parallelism=1, ingest_date=2026-01-10, min_sleep=1.1
+2026-01-10 15:56:38,509 | INFO | spark.ingest.alpha_vantage | Dane OK zapisane do: data/raw/alpha_vantage/market=forex/frequency=daily (partitionBy pair, ingest_date)
+2026-01-10 15:56:38,509 | INFO | spark.ingest.alpha_vantage | Liczba rekordów OK: 15000
+2026-01-10 15:56:38,509 | INFO | spark.ingest.alpha_vantage | Liczba rekordów błędów: 0
+2026-01-10 16:10:14,512 | INFO | spark.ingest.alpha_vantage | Ingest start. pairs=[('EUR', 'USD'), ('GBP', 'USD'), ('USD', 'JPY')], parallelism=1, ingest_date=2026-01-10, min_sleep=1.1
+2026-01-10 16:10:30,550 | INFO | spark.ingest.alpha_vantage | Dane OK zapisane do: data/raw/alpha_vantage/market=forex/frequency=daily (partitionBy pair, ingest_date)
+2026-01-10 16:10:30,550 | INFO | spark.ingest.alpha_vantage | Liczba rekordów OK: 15000
+2026-01-10 16:10:30,551 | INFO | spark.ingest.alpha_vantage | Liczba rekordów błędów: 0
+2026-01-10 16:13:15,696 | INFO | spark.ingest.alpha_vantage | Ingest start. pairs=[('EUR', 'USD'), ('GBP', 'USD'), ('USD', 'JPY')], parallelism=1, ingest_date=2026-01-10, min_sleep=1.1
+2026-01-10 16:13:31,356 | INFO | spark.ingest.alpha_vantage | Dane OK zapisane do: data/raw/alpha_vantage/market=forex/frequency=daily (partitionBy pair, ingest_date)
+2026-01-10 16:13:31,357 | INFO | spark.ingest.alpha_vantage | Liczba rekordów OK: 15000
+2026-01-10 16:13:31,357 | INFO | spark.ingest.alpha_vantage | Liczba rekordów błędów: 0
+2026-01-14 15:31:23,020 | INFO | spark.ingest.alpha_vantage | Ingest start. pairs=[('EUR', 'USD'), ('GBP', 'USD'), ('USD', 'JPY')], parallelism=1, ingest_date=2026-01-14, min_sleep=1.1
+2026-01-14 15:31:37,901 | INFO | spark.ingest.alpha_vantage | Dane OK zapisane do: data/raw/alpha_vantage/market=forex/frequency=daily (partitionBy pair, ingest_date)
+2026-01-14 15:31:37,901 | INFO | spark.ingest.alpha_vantage | Liczba rekordów OK: 15000
+2026-01-14 15:31:37,901 | INFO | spark.ingest.alpha_vantage | Liczba rekordów błędów: 0
+2026-01-14 15:32:49,069 | INFO | spark.ingest.alpha_vantage | Ingest start. pairs=[('EUR', 'USD'), ('GBP', 'USD'), ('USD', 'JPY')], parallelism=1, ingest_date=2026-01-14, min_sleep=1.1
+2026-01-14 15:33:03,634 | INFO | spark.ingest.alpha_vantage | Dane OK zapisane do: data/raw/alpha_vantage/market=forex/frequency=daily (partitionBy pair, ingest_date)
+2026-01-14 15:33:03,634 | INFO | spark.ingest.alpha_vantage | Liczba rekordów OK: 15000
+2026-01-14 15:33:03,634 | INFO | spark.ingest.alpha_vantage | Liczba rekordów błędów: 0
+2026-01-14 15:33:59,868 | INFO | spark.ingest.alpha_vantage | Ingest start. pairs=[('EUR', 'USD'), ('GBP', 'USD'), ('USD', 'JPY')], parallelism=1, ingest_date=2026-01-14, min_sleep=1.1
+2026-01-14 15:34:15,475 | INFO | spark.ingest.alpha_vantage | Dane OK zapisane do: data/raw/alpha_vantage/market=forex/frequency=daily (partitionBy pair, ingest_date)
+2026-01-14 15:34:15,475 | INFO | spark.ingest.alpha_vantage | Liczba rekordów OK: 15000
+2026-01-14 15:34:15,475 | INFO | spark.ingest.alpha_vantage | Liczba rekordów błędów: 0
+2026-01-14 15:39:08,503 | INFO | spark.ingest.alpha_vantage | Ingest start. pairs=[('EUR', 'USD'), ('GBP', 'USD'), ('USD', 'JPY')], parallelism=1, ingest_date=2026-01-14, min_sleep=1.1
+2026-01-14 15:39:24,754 | INFO | spark.ingest.alpha_vantage | Dane OK zapisane do: data/raw/alpha_vantage/market=forex/frequency=daily (partitionBy pair, ingest_date)
+2026-01-14 15:39:24,754 | INFO | spark.ingest.alpha_vantage | Liczba rekordów OK: 15000
+2026-01-14 15:39:24,754 | INFO | spark.ingest.alpha_vantage | Liczba rekordów błędów: 0

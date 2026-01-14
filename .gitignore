@@ -8,55 +8,21 @@ __pycache__/
 *.pyo
 *.pyd
 *.so
+
+# =========================
+# Build / packaging
+# =========================
 *.egg-info/
 dist/
 build/
 pip-wheel-metadata/
+
+# =========================
+# Test / lint / type caches
+# =========================
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
 .coverage
 .coverage.*
 htmlcov/
-*.log
-
-# =========================
-# OS / editor
-# =========================
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# =========================
-# Project runtime artifacts
-# =========================
-deps.zip
-logs/
-reports/
-data/
-models/   # jeśli trzymasz model artifacts lokalnie (a nie w repo)
-*.parquet
-*.crc
-
-# =========================
-# Spark / Hadoop artifacts
-# =========================
-spark-events/
-eventlog/
-*.inprogress
-/tmp/
-spark-warehouse/
-metastore_db/
-derby.log
-
-# =========================
-# Credentials / secrets
-# =========================
-**/config.yaml
-**/config.local.yaml
-**/*.pem
-**/*.key
-**/.env
