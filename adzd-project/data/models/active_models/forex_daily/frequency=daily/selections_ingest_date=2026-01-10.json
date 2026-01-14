@@ -1,0 +1,44 @@
+[
+  {
+    "pair": "EUR_USD",
+    "selected_model": "sarima",
+    "metric": "mae",
+    "metric_value": 0.0015329298227795217,
+    "n": 30,
+    "ingest_date": "2026-01-10",
+    "selected_at": "2026-01-10T16:14:02.834791+00:00",
+    "models_considered": [
+      "naive",
+      "sarima",
+      "prophet"
+    ]
+  },
+  {
+    "pair": "GBP_USD",
+    "selected_model": "sarima",
+    "metric": "mae",
+    "metric_value": 0.0023691679983597917,
+    "n": 30,
+    "ingest_date": "2026-01-10",
+    "selected_at": "2026-01-10T16:14:02.834791+00:00",
+    "models_considered": [
+      "naive",
+      "sarima",
+      "prophet"
+    ]
+  },
+  {
+    "pair": "USD_JPY",
+    "selected_model": "prophet",
+    "metric": "mae",
+    "metric_value": 0.0032792915711087403,
+    "n": 30,
+    "ingest_date": "2026-01-10",
+    "selected_at": "2026-01-10T16:14:02.834791+00:00",
+    "models_considered": [
+      "naive",
+      "sarima",
+      "prophet"
+    ]
+  }
+]

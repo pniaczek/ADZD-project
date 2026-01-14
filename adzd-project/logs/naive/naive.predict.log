@@ -1,0 +1,18 @@
+2026-01-10 14:50:07,394 | INFO | naive.predict | NAIVE predict ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY']
+2026-01-10 14:50:07,477 | INFO | naive.predict | Predict done.
+2026-01-10 15:05:38,770 | INFO | naive.predict | NAIVE predict ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY']
+2026-01-10 15:05:38,857 | INFO | naive.predict | Predict done.
+2026-01-10 15:34:54,900 | INFO | naive.predict | NAIVE predict ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], horizon=14
+2026-01-10 15:37:45,604 | INFO | naive.predict | NAIVE predict ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], horizon=14
+2026-01-10 15:50:08,142 | INFO | naive.predict | NAIVE predict ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], horizon=14
+2026-01-10 15:50:08,211 | INFO | naive.predict | Predict done.
+2026-01-10 15:57:08,662 | INFO | naive.predict | NAIVE predict ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], horizon=14
+2026-01-10 15:57:08,727 | INFO | naive.predict | Predict done.
+2026-01-10 16:11:02,179 | INFO | naive.predict | NAIVE predict ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], horizon=14
+2026-01-10 16:11:02,288 | INFO | naive.predict | Predict done.
+2026-01-10 16:14:03,478 | INFO | naive.predict | NAIVE predict ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], horizon=14
+2026-01-10 16:14:03,545 | INFO | naive.predict | Predict done.
+2026-01-14 15:39:54,575 | INFO | naive.predict | NAIVE predict ingest_date=2026-01-14, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], horizon=14
+2026-01-14 15:39:54,651 | INFO | naive.predict | Predict done.
+2026-01-14T22:51:13+0000 | INFO | naive.predict | NAIVE predict ingest_date=2026-01-14, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], horizon=14
+2026-01-14T22:51:13+0000 | INFO | naive.predict | Predict done.

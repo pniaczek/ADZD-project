@@ -8,7 +8,6 @@ Repo zawiera 3 komponenty:
 ## Spis treści
 - [Wymagania](#wymagania)
 - [Security Group (EC2)](#security-group-ec2)
-- [Struktura repo](#struktura-repo)
 - [Setup end-to-end (jedna checklista)](#setup-end-to-end-jedna-checklista)
 - [1. ADZD Project](#1-adzd-project)
 - [2. Spark History Server](#2-spark-history-server)
@@ -56,19 +55,7 @@ Ogranicz Source do **Twojego IP** `/32` (tak jak na screenie).
 
 ---
 
-## Struktura repo
-
-```
-project/
-  adzd-project/
-  mcp-apache-spark-history-server/
-  spark-agent/
-  README.md
-```
-
----
-
-## Setup end-to-end (jedna checklista)
+## Setup end-to-end
 
 Poniższe kroki zakładają, że jesteś na EC2 i masz w `~` tarball `spark-3.4.2-bin-hadoop3.tgz`.
 
@@ -100,7 +87,7 @@ spark-submit --version
 2) ADZD Project venv:
 
 ```bash
-cd ~/project/adzd-project
+# Prerequisite: Python 3.9.25
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
@@ -111,20 +98,20 @@ export PYTHONPATH="$(pwd)"
 3) MCP server venv:
 
 ```bash
-cd ~/project/mcp-apache-spark-history-server
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-pip install -r requirements.txt
+sudo dnf install -y python3.12 python3.12-venv python3.12-pip
+cd ~
+python3.12 -m venv spark-mcp
+source spark-mcp/bin/activate
+pip install mcp-apache-spark-history-server
 ```
 
 4) Spark Agent venv:
 
 ```bash
-cd ~/project/spark-agent
+cd ~/spark-agent
+python3.12 -m venv venv
 source venv/bin/activate
-python -m pip install --upgrade pip
-pip install -r requirements.txt || true
+pip install httpx mcp ollama
 ```
 
 ---
@@ -147,7 +134,7 @@ W szczególności ustaw:
 ### 1.2 Uruchomienie daily pipeline
 
 ```bash
-cd ~/project/adzd-project
+cd ~/project_3/ADZD-project/adzd-project
 source .venv/bin/activate
 export SPARK_HOME=/opt/spark
 export PATH="$SPARK_HOME/bin:$SPARK_HOME/sbin:$PATH"
@@ -193,8 +180,9 @@ Ten komponent uruchamia MCP server, który udostępnia narzędzia do odpytywania
 ### 3.1 Start MCP server (na EC2)
 
 ```bash
-cd ~/project/mcp-apache-spark-history-server
-source .venv/bin/activate
+cd ~
+source spark-mcp/bin/activate
+export SPARK_HISTORY_FS_LOG_DIRECTORY=file:///opt/spark-events
 python -m spark_history_mcp.core.main
 ```
 
@@ -233,44 +221,13 @@ python agent.py
 
 1) Uruchom daily pipeline:
 
-```bash
-cd ~/project/adzd-project
-source .venv/bin/activate
-export SPARK_HOME=/opt/spark
-export PATH="$SPARK_HOME/bin:$SPARK_HOME/sbin:$PATH"
-export PYTHONPATH="$(pwd)"
-bash scripts/run_daily_pipeline.sh
-```
-
 2) Uruchom Spark History Server:
-
-```bash
-export SPARK_HOME=/opt/spark
-export PATH="$SPARK_HOME/bin:$SPARK_HOME/sbin:$PATH"
-$SPARK_HOME/sbin/start-history-server.sh
-```
 
 3) (Lokalnie) tunnel do History Server:
 
-```bash
-ssh -i /path/to/key.pem -N -L 18080:localhost:18080 ec2-user@<EC2_PUBLIC_IP>
-```
-
 4) Uruchom MCP server:
 
-```bash
-cd ~/project/mcp-apache-spark-history-server
-source .venv/bin/activate
-python -m spark_history_mcp.core.main
-```
-
 5) Uruchom agenta:
-
-```bash
-cd ~/project/spark-agent
-source venv/bin/activate
-python agent.py
-```
 
 ---
 
@@ -288,19 +245,6 @@ python agent.py
 - `adzd-project/reports/` — wykresy i podsumowania
 
 ---
-
-## Troubleshooting
-
-### History Server nie pokazuje aplikacji
-- sprawdź czy event logi zapisują się do `/opt/spark-events`
-- sprawdź `spark-defaults.conf` (spark.eventLog.dir + spark.history.fs.logDirectory)
-- uruchom ponownie history server
-
-### Port 18080 / 18888 nie działa
-- sprawdź procesy / porty:
-  - `lsof -i :18080`
-  - `lsof -i :18888`
-  - `ps aux | grep history`
 
 ### Agent nie widzi MCP
 - na EC2: MCP_URL powinien być `http://localhost:18888/mcp/`

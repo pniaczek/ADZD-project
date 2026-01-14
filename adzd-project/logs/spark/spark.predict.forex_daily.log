@@ -1,0 +1,20 @@
+2026-01-08 22:40:07,157 | INFO | spark.predict.forex_daily | Reading features from: data/features/forex_daily/frequency=daily
+2026-01-08 22:40:13,643 | INFO | spark.predict.forex_daily | Predict model=naive, ingest_date=2026-01-08, frequency=daily
+2026-01-08 22:40:16,105 | INFO | spark.predict.forex_daily | Predictions prepared for pairs: 3
+2026-01-08 22:40:16,105 | INFO | spark.predict.forex_daily | Writing predictions to: data/predictions/forex_daily/frequency=daily/model=naive (partitionBy pair, ingest_date)
+2026-01-08 22:40:17,809 | INFO | spark.predict.forex_daily | Predict done.
+2026-01-08 22:40:24,811 | INFO | spark.predict.forex_daily | Reading features from: data/features/forex_daily/frequency=daily
+2026-01-08 22:40:30,863 | INFO | spark.predict.forex_daily | Predict model=seasonal_naive, ingest_date=2026-01-08, frequency=daily
+2026-01-08 22:40:33,315 | INFO | spark.predict.forex_daily | Predictions prepared for pairs: 3
+2026-01-08 22:40:33,315 | INFO | spark.predict.forex_daily | Writing predictions to: data/predictions/forex_daily/frequency=daily/model=seasonal_naive (partitionBy pair, ingest_date)
+2026-01-08 22:40:35,091 | INFO | spark.predict.forex_daily | Predict done.
+2026-01-10 13:21:50,155 | INFO | spark.predict.forex_daily | Reading features from: data/features/forex_daily/frequency=daily
+2026-01-10 13:21:56,753 | INFO | spark.predict.forex_daily | Predict model=naive, ingest_date=2026-01-08, frequency=daily
+2026-01-10 13:21:59,198 | INFO | spark.predict.forex_daily | Predictions prepared for pairs: 3
+2026-01-10 13:21:59,198 | INFO | spark.predict.forex_daily | Writing predictions to: data/predictions/forex_daily/frequency=daily/model=naive (partitionBy pair, ingest_date)
+2026-01-10 13:22:00,782 | INFO | spark.predict.forex_daily | Predict done.
+2026-01-10 13:22:07,828 | INFO | spark.predict.forex_daily | Reading features from: data/features/forex_daily/frequency=daily
+2026-01-10 13:22:14,309 | INFO | spark.predict.forex_daily | Predict model=seasonal_naive, ingest_date=2026-01-08, frequency=daily
+2026-01-10 13:22:16,802 | INFO | spark.predict.forex_daily | Predictions prepared for pairs: 3
+2026-01-10 13:22:16,802 | INFO | spark.predict.forex_daily | Writing predictions to: data/predictions/forex_daily/frequency=daily/model=seasonal_naive (partitionBy pair, ingest_date)
+2026-01-10 13:22:18,769 | INFO | spark.predict.forex_daily | Predict done.

@@ -1,0 +1,3 @@
+=== DAILY PIPELINE START 2026-01-14T152218Z ===
+PWD=/home/ec2-user/project/adzd-project
+scripts/run_daily_pipeline.sh: line 23: python: command not found
