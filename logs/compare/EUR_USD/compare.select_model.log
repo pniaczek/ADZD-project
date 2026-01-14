@@ -1,0 +1,61 @@
+2025-12-18 00:05:00,795 | INFO | compare.select_model | Selecting best model for EUR_USD using metric=mae
+2025-12-18 00:08:21,067 | INFO | compare.select_model | Selecting best model for EUR_USD using metric=mae
+2025-12-18 00:08:21,068 | INFO | compare.select_model | Model selection completed
+2025-12-18 00:08:21,068 | INFO | compare.select_model | {
+  "pair": "EUR_USD",
+  "selected_model": "NAIVE",
+  "metric": "mae",
+  "metric_value": 0.0033722772277227724,
+  "model_path": "models/naive/EUR_USD/latest",
+  "selected_at": "2025-12-18T00:08:21.067762+00:00"
+}
+2025-12-18 00:11:43,829 | INFO | compare.select_model | Selecting best model for EUR_USD using metric=mae
+2025-12-18 00:11:43,829 | INFO | compare.select_model | Model selection completed
+2025-12-18 00:11:43,830 | INFO | compare.select_model | {
+  "pair": "EUR_USD",
+  "selected_model": "NAIVE",
+  "metric": "mae",
+  "metric_value": 0.0033722772277227724,
+  "model_path": "models/naive/EUR_USD/latest",
+  "selected_at": "2025-12-18T00:11:43.829511+00:00"
+}
+2025-12-18 00:16:42,096 | INFO | compare.select_model | Selecting best model for EUR_USD using metric=mae
+2025-12-18 00:16:42,097 | INFO | compare.select_model | Model selection completed
+2025-12-18 00:16:42,097 | INFO | compare.select_model | {
+  "pair": "EUR_USD",
+  "selected_model": "NAIVE",
+  "metric": "mae",
+  "metric_value": 0.0033722772277227724,
+  "model_path": "models/naive/EUR_USD/latest",
+  "selected_at": "2025-12-18T00:16:42.097000+00:00"
+}
+2025-12-18 00:20:04,116 | INFO | compare.select_model | Selecting best model for EUR_USD using metric=mae
+2025-12-18 00:20:04,116 | INFO | compare.select_model | Model selection completed
+2025-12-18 00:20:04,117 | INFO | compare.select_model | {
+  "pair": "EUR_USD",
+  "selected_model": "NAIVE",
+  "metric": "mae",
+  "metric_value": 0.0033722772277227724,
+  "model_path": "models/naive/EUR_USD/latest",
+  "selected_at": "2025-12-18T00:20:04.116648+00:00"
+}
+2026-01-10 14:50:06,869 | INFO | compare.select_model | Selecting best model for EUR_USD using metric=mae
+2026-01-10 14:50:06,872 | INFO | compare.select_model | Model selection completed
+2026-01-10 14:50:06,872 | INFO | compare.select_model | {
+  "pair": "EUR_USD",
+  "selected_model": "NAIVE",
+  "metric": "mae",
+  "metric_value": 0.0033722772277227724,
+  "model_path": "models/naive/EUR_USD/latest",
+  "selected_at": "2026-01-10T14:50:06.872344+00:00"
+}
+2026-01-10 15:05:38,278 | INFO | compare.select_model | Selecting best model for EUR_USD using metric=mae
+2026-01-10 15:05:38,278 | INFO | compare.select_model | Model selection completed
+2026-01-10 15:05:38,279 | INFO | compare.select_model | {
+  "pair": "EUR_USD",
+  "selected_model": "NAIVE",
+  "metric": "mae",
+  "metric_value": 0.0033722772277227724,
+  "model_path": "models/naive/EUR_USD/latest",
+  "selected_at": "2026-01-10T15:05:38.278529+00:00"
+}

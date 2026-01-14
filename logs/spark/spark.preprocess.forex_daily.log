@@ -1,0 +1,72 @@
+2025-12-17 23:24:23,375 | INFO | spark.preprocess.forex_daily | Preprocessing zapisany do: data/processed/forex_daily/pair=EUR_USD
+2025-12-17 23:24:24,980 | INFO | spark.preprocess.forex_daily | Liczba rekordów po preprocessingu: 4999
+2025-12-17 23:31:29,997 | INFO | spark.preprocess.forex_daily | Preprocessing zapisany do: data/processed/forex_daily/pair=EUR_USD
+2025-12-17 23:31:31,417 | INFO | spark.preprocess.forex_daily | Liczba rekordów po preprocessingu: 4999
+2025-12-17 23:43:08,199 | INFO | spark.preprocess.forex_daily | Preprocessing zapisany do: data/processed/forex_daily/pair=EUR_USD
+2025-12-17 23:43:09,776 | INFO | spark.preprocess.forex_daily | Liczba rekordów po preprocessingu: 4999
+2025-12-17 23:45:48,352 | INFO | spark.preprocess.forex_daily | Preprocessing zapisany do: data/processed/forex_daily/pair=EUR_USD
+2025-12-17 23:45:49,693 | INFO | spark.preprocess.forex_daily | Liczba rekordów po preprocessingu: 4999
+2025-12-17 23:50:55,241 | INFO | spark.preprocess.forex_daily | Preprocessing zapisany do: data/processed/forex_daily/pair=EUR_USD
+2025-12-17 23:50:56,403 | INFO | spark.preprocess.forex_daily | Liczba rekordów po preprocessingu: 4999
+2025-12-17 23:55:37,066 | INFO | spark.preprocess.forex_daily | Preprocessing zapisany do: data/processed/forex_daily/pair=EUR_USD
+2025-12-17 23:55:38,505 | INFO | spark.preprocess.forex_daily | Liczba rekordów po preprocessingu: 4999
+2025-12-17 23:59:58,376 | INFO | spark.preprocess.forex_daily | Preprocessing zapisany do: data/processed/forex_daily/pair=EUR_USD
+2025-12-17 23:59:59,348 | INFO | spark.preprocess.forex_daily | Liczba rekordów po preprocessingu: 4999
+2025-12-18 00:04:55,533 | INFO | spark.preprocess.forex_daily | Preprocessing zapisany do: data/processed/forex_daily/pair=EUR_USD
+2025-12-18 00:04:56,917 | INFO | spark.preprocess.forex_daily | Liczba rekordów po preprocessingu: 4999
+2025-12-18 00:08:15,839 | INFO | spark.preprocess.forex_daily | Preprocessing zapisany do: data/processed/forex_daily/pair=EUR_USD
+2025-12-18 00:08:17,190 | INFO | spark.preprocess.forex_daily | Liczba rekordów po preprocessingu: 4999
+2025-12-18 00:11:38,678 | INFO | spark.preprocess.forex_daily | Preprocessing zapisany do: data/processed/forex_daily/pair=EUR_USD
+2025-12-18 00:11:40,097 | INFO | spark.preprocess.forex_daily | Liczba rekordów po preprocessingu: 4999
+2025-12-18 00:16:36,703 | INFO | spark.preprocess.forex_daily | Preprocessing zapisany do: data/processed/forex_daily/pair=EUR_USD
+2025-12-18 00:16:38,209 | INFO | spark.preprocess.forex_daily | Liczba rekordów po preprocessingu: 4999
+2025-12-18 00:19:58,002 | INFO | spark.preprocess.forex_daily | Preprocessing zapisany do: data/processed/forex_daily/pair=EUR_USD
+2025-12-18 00:19:59,500 | INFO | spark.preprocess.forex_daily | Liczba rekordów po preprocessingu: 4999
+2026-01-08 21:10:08,154 | INFO | spark.preprocess.forex_daily | Reading raw from: data/raw/alpha_vantage/market=forex/frequency=daily
+2026-01-08 21:10:16,035 | INFO | spark.preprocess.forex_daily | Latest ingest_date detected: 2026-01-08
+2026-01-08 21:10:17,116 | INFO | spark.preprocess.forex_daily | Writing features to: data/features/forex_daily/frequency=daily (partitionBy pair, ingest_date)
+2026-01-08 21:10:23,864 | INFO | spark.preprocess.forex_daily | Preprocessing done. Records: 279
+2026-01-08 21:19:45,912 | INFO | spark.preprocess.forex_daily | Reading raw from: data/raw/alpha_vantage/market=forex/frequency=daily
+2026-01-08 21:19:52,281 | INFO | spark.preprocess.forex_daily | Processing ingest_date: 2026-01-08
+2026-01-08 21:19:53,488 | INFO | spark.preprocess.forex_daily | Writing features to: data/features/forex_daily/frequency=daily (partitionBy pair, ingest_date)
+2026-01-08 21:19:59,383 | INFO | spark.preprocess.forex_daily | Preprocessing done. ingest_date=2026-01-08, records=279
+2026-01-10 14:49:43,324 | INFO | spark.preprocess.forex_daily | Reading raw from: data/raw/alpha_vantage/market=forex/frequency=daily
+2026-01-10 14:49:49,854 | INFO | spark.preprocess.forex_daily | Processing ingest_date: 2026-01-10
+2026-01-10 14:49:50,929 | INFO | spark.preprocess.forex_daily | Writing features to: data/features/forex_daily/frequency=daily (partitionBy pair, ingest_date)
+2026-01-10 14:49:59,587 | INFO | spark.preprocess.forex_daily | Preprocessing done. ingest_date=2026-01-10, records=14976
+2026-01-10 15:05:14,920 | INFO | spark.preprocess.forex_daily | Reading raw from: data/raw/alpha_vantage/market=forex/frequency=daily
+2026-01-10 15:05:21,378 | INFO | spark.preprocess.forex_daily | Processing ingest_date: 2026-01-10
+2026-01-10 15:05:22,517 | INFO | spark.preprocess.forex_daily | Writing features to: data/features/forex_daily/frequency=daily (partitionBy pair, ingest_date)
+2026-01-10 15:05:31,828 | INFO | spark.preprocess.forex_daily | Preprocessing done. ingest_date=2026-01-10, records=14976
+2026-01-10 15:34:31,097 | INFO | spark.preprocess.forex_daily | Reading raw from: data/raw/alpha_vantage/market=forex/frequency=daily
+2026-01-10 15:34:37,432 | INFO | spark.preprocess.forex_daily | Processing ingest_date: 2026-01-10
+2026-01-10 15:34:38,857 | INFO | spark.preprocess.forex_daily | Writing features to: data/features/forex_daily/frequency=daily (partitionBy pair, ingest_date)
+2026-01-10 15:34:47,507 | INFO | spark.preprocess.forex_daily | Preprocessing done. ingest_date=2026-01-10, records=14976
+2026-01-10 15:56:45,944 | INFO | spark.preprocess.forex_daily | Reading raw from: data/raw/alpha_vantage/market=forex/frequency=daily
+2026-01-10 15:56:52,191 | INFO | spark.preprocess.forex_daily | Processing ingest_date: 2026-01-10
+2026-01-10 15:56:53,358 | INFO | spark.preprocess.forex_daily | Writing features to: data/features/forex_daily/frequency=daily (partitionBy pair, ingest_date)
+2026-01-10 15:57:01,299 | INFO | spark.preprocess.forex_daily | Preprocessing done. ingest_date=2026-01-10, records=14976
+2026-01-10 16:10:38,381 | INFO | spark.preprocess.forex_daily | Reading raw from: data/raw/alpha_vantage/market=forex/frequency=daily
+2026-01-10 16:10:44,970 | INFO | spark.preprocess.forex_daily | Processing ingest_date: 2026-01-10
+2026-01-10 16:10:46,287 | INFO | spark.preprocess.forex_daily | Writing features to: data/features/forex_daily/frequency=daily (partitionBy pair, ingest_date)
+2026-01-10 16:10:54,983 | INFO | spark.preprocess.forex_daily | Preprocessing done. ingest_date=2026-01-10, records=14976
+2026-01-10 16:13:38,765 | INFO | spark.preprocess.forex_daily | Reading raw from: data/raw/alpha_vantage/market=forex/frequency=daily
+2026-01-10 16:13:45,008 | INFO | spark.preprocess.forex_daily | Processing ingest_date: 2026-01-10
+2026-01-10 16:13:46,209 | INFO | spark.preprocess.forex_daily | Writing features to: data/features/forex_daily/frequency=daily (partitionBy pair, ingest_date)
+2026-01-10 16:13:55,191 | INFO | spark.preprocess.forex_daily | Preprocessing done. ingest_date=2026-01-10, records=14976
+2026-01-14 15:31:44,795 | INFO | spark.preprocess.forex_daily | Reading raw from: data/raw/alpha_vantage/market=forex/frequency=daily
+2026-01-14 15:31:50,917 | INFO | spark.preprocess.forex_daily | Processing ingest_date: 2026-01-14
+2026-01-14 15:31:52,125 | INFO | spark.preprocess.forex_daily | Writing features to: data/features/forex_daily/frequency=daily (partitionBy pair, ingest_date)
+2026-01-14 15:32:00,531 | INFO | spark.preprocess.forex_daily | Preprocessing done. ingest_date=2026-01-14, records=14976
+2026-01-14 15:33:10,789 | INFO | spark.preprocess.forex_daily | Reading raw from: data/raw/alpha_vantage/market=forex/frequency=daily
+2026-01-14 15:33:17,425 | INFO | spark.preprocess.forex_daily | Processing ingest_date: 2026-01-14
+2026-01-14 15:33:18,542 | INFO | spark.preprocess.forex_daily | Writing features to: data/features/forex_daily/frequency=daily (partitionBy pair, ingest_date)
+2026-01-14 15:33:26,752 | INFO | spark.preprocess.forex_daily | Preprocessing done. ingest_date=2026-01-14, records=14976
+2026-01-14 15:34:22,825 | INFO | spark.preprocess.forex_daily | Reading raw from: data/raw/alpha_vantage/market=forex/frequency=daily
+2026-01-14 15:34:29,179 | INFO | spark.preprocess.forex_daily | Processing ingest_date: 2026-01-14
+2026-01-14 15:34:30,437 | INFO | spark.preprocess.forex_daily | Writing features to: data/features/forex_daily/frequency=daily (partitionBy pair, ingest_date)
+2026-01-14 15:34:38,944 | INFO | spark.preprocess.forex_daily | Preprocessing done. ingest_date=2026-01-14, records=14976
+2026-01-14 15:39:32,273 | INFO | spark.preprocess.forex_daily | Reading raw from: data/raw/alpha_vantage/market=forex/frequency=daily
+2026-01-14 15:39:38,565 | INFO | spark.preprocess.forex_daily | Processing ingest_date: 2026-01-14
+2026-01-14 15:39:39,775 | INFO | spark.preprocess.forex_daily | Writing features to: data/features/forex_daily/frequency=daily (partitionBy pair, ingest_date)
+2026-01-14 15:39:46,908 | INFO | spark.preprocess.forex_daily | Preprocessing done. ingest_date=2026-01-14, records=14976

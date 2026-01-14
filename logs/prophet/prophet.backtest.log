@@ -1,0 +1,31 @@
+2026-01-10 14:17:02,161 | INFO | prophet.backtest | Prophet backtest ingest_date=2026-01-08, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=90
+2026-01-10 14:17:02,307 | WARNING | prophet.backtest | Skipping EUR_USD: too short series len=93
+2026-01-10 14:17:02,366 | WARNING | prophet.backtest | Skipping GBP_USD: too short series len=93
+2026-01-10 14:17:02,405 | WARNING | prophet.backtest | Skipping USD_JPY: too short series len=93
+2026-01-10 14:33:21,067 | INFO | prophet.backtest | Prophet backtest ingest_date=2026-01-08, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=30, min_train_size=60
+2026-01-10 14:33:21,747 | INFO | prophet.backtest | Computed metrics for pairs: 3
+2026-01-10 14:33:21,747 | INFO | prophet.backtest | Done.
+2026-01-10 14:50:05,418 | INFO | prophet.backtest | Prophet backtest ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=30, min_train_size=60
+2026-01-10 14:50:06,636 | INFO | prophet.backtest | Computed metrics for pairs: 3
+2026-01-10 14:50:06,636 | INFO | prophet.backtest | Done.
+2026-01-10 15:05:36,853 | INFO | prophet.backtest | Prophet backtest ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=30, min_train_size=60
+2026-01-10 15:05:38,055 | INFO | prophet.backtest | Computed metrics for pairs: 3
+2026-01-10 15:05:38,055 | INFO | prophet.backtest | Done.
+2026-01-10 15:34:52,408 | INFO | prophet.backtest | Prophet backtest ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=30, min_train_size=60
+2026-01-10 15:34:53,625 | INFO | prophet.backtest | Computed metrics for pairs: 3
+2026-01-10 15:34:53,625 | INFO | prophet.backtest | Done.
+2026-01-10 15:50:05,502 | INFO | prophet.backtest | Prophet backtest ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=30, min_train_size=60
+2026-01-10 15:50:06,731 | INFO | prophet.backtest | Computed metrics for pairs: 3
+2026-01-10 15:50:06,731 | INFO | prophet.backtest | Done.
+2026-01-10 15:57:06,180 | INFO | prophet.backtest | Prophet backtest ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=30, min_train_size=60
+2026-01-10 15:57:07,381 | INFO | prophet.backtest | Computed metrics for pairs: 3
+2026-01-10 15:57:07,381 | INFO | prophet.backtest | Done.
+2026-01-10 16:10:59,513 | INFO | prophet.backtest | Prophet backtest ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=30, min_train_size=60
+2026-01-10 16:11:00,706 | INFO | prophet.backtest | Computed metrics for pairs: 3
+2026-01-10 16:11:00,706 | INFO | prophet.backtest | Done.
+2026-01-10 16:14:00,083 | INFO | prophet.backtest | Prophet backtest ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=30, min_train_size=60
+2026-01-10 16:14:01,412 | INFO | prophet.backtest | Computed metrics for pairs: 3
+2026-01-10 16:14:01,412 | INFO | prophet.backtest | Done.
+2026-01-14 15:39:51,697 | INFO | prophet.backtest | Prophet backtest ingest_date=2026-01-14, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=30, min_train_size=60
+2026-01-14 15:39:53,337 | INFO | prophet.backtest | Computed metrics for pairs: 3
+2026-01-14 15:39:53,338 | INFO | prophet.backtest | Done.

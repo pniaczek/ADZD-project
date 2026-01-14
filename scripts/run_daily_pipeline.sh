@@ -8,6 +8,7 @@ source .venv/bin/activate
 
 # --- env ---
 export PYTHONPATH="$(pwd)"
+
 export PATH="$SPARK_HOME/bin:$SPARK_HOME/sbin:$PATH"
 
 RUN_TS="$(date -u +"%Y-%m-%dT%H%M%SZ")"
@@ -32,7 +33,11 @@ spark-submit \
   --master local[*] \
   --name "alpha-vantage-fx-daily-ingest" \
   --conf spark.eventLog.enabled=true \
+<<<<<<< HEAD
   --conf spark.eventLog.dir=/tmp/spark-events \
+=======
+  --conf spark.eventLog.dir=/opt/spark-events \
+>>>>>>> origin/mcp-history-server
   --py-files deps.zip \
   spark_jobs/ingest/alpha_vantage_ingest.py
 
@@ -52,7 +57,8 @@ spark-submit \
 # -----------------------
 python3 -m pipelines.naive.backtest --pairs all
 python3 -m pipelines.sarima.backtest --pairs all
-# python3 -m pipelines.prophet.backtest --pairs all
+python3 -m pipelines.prophet.backtest --pairs all
+
 
 # -----------------------
 # D) MODEL SELECTION (Python)
@@ -66,13 +72,13 @@ python3 -m pipelines.compare.select_model --pairs all || true
 # -----------------------
 python3 -m pipelines.naive.predict --pairs all || true
 python3 -m pipelines.sarima.predict --pairs all || true
-# python3 -m pipelines.prophet.predict --pairs all || true
+python3 -m pipelines.prophet.predict --pairs all || true
 
 # -----------------------
 # VISUALIZE
 # -----------------------
-# python3 -m pipelines.visualize.forecast_vs_actual --pairs all --models naive,sarima,prophet --no-intervals
-python3 -m pipelines.visualize.forecast_vs_actual --pairs all --models naive,sarima --no-intervals
+python3 -m pipelines.visualize.forecast_vs_actual --pairs all --models naive,sarima,prophet --no-intervals
+
 
 # -----------------------
 # OPTIONAL: MCP agent (jeśli masz agent.py i działa w tym repo)
