@@ -1,7 +1,0 @@
-models:
-  sarima:
-    enabled: true
-    target: close
-    params:
-      order: [1, 0, 1]
-      seasonal_order: [1, 0, 1, 26]

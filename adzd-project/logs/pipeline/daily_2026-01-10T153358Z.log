@@ -1,0 +1,1475 @@
+=== DAILY PIPELINE START 2026-01-10T153358Z ===
+PWD=/home/ec2-user/ADZD-project
+Python 3.9.25
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /___/ .__/\_,_/_/ /_/\_\   version 3.4.2
+      /_/
+                        
+Using Scala version 2.12.17, OpenJDK 64-Bit Server VM, 17.0.17
+Branch HEAD
+Compiled by user centos on 2023-11-25T07:25:47Z
+Revision 0c0e7d4087c64efca259b4fb656b8be643be5686
+Url https://github.com/apache/spark
+Type --help for more information.
+26/01/10 15:34:03 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/01/10 15:34:05 INFO SparkContext: Running Spark version 3.4.2
+26/01/10 15:34:05 INFO ResourceUtils: ==============================================================
+26/01/10 15:34:05 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/01/10 15:34:05 INFO ResourceUtils: ==============================================================
+26/01/10 15:34:05 INFO SparkContext: Submitted application: alpha-vantage-fx-daily-ingest
+26/01/10 15:34:05 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/01/10 15:34:05 INFO ResourceProfile: Limiting resource is cpu
+26/01/10 15:34:05 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/01/10 15:34:05 INFO SecurityManager: Changing view acls to: ec2-user
+26/01/10 15:34:05 INFO SecurityManager: Changing modify acls to: ec2-user
+26/01/10 15:34:05 INFO SecurityManager: Changing view acls groups to: 
+26/01/10 15:34:05 INFO SecurityManager: Changing modify acls groups to: 
+26/01/10 15:34:05 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ec2-user; groups with view permissions: EMPTY; users with modify permissions: ec2-user; groups with modify permissions: EMPTY
+26/01/10 15:34:05 INFO Utils: Successfully started service 'sparkDriver' on port 37985.
+26/01/10 15:34:05 INFO SparkEnv: Registering MapOutputTracker
+26/01/10 15:34:05 INFO SparkEnv: Registering BlockManagerMaster
+26/01/10 15:34:05 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/01/10 15:34:05 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/01/10 15:34:05 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/01/10 15:34:05 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-ac6fe1f8-9931-4853-ae35-66541ff5a8ef
+26/01/10 15:34:05 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+26/01/10 15:34:05 INFO SparkEnv: Registering OutputCommitCoordinator
+26/01/10 15:34:06 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/01/10 15:34:06 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/01/10 15:34:06 INFO SparkContext: Added file file:///home/ec2-user/ADZD-project/deps.zip at file:///home/ec2-user/ADZD-project/deps.zip with timestamp 1768059245142
+26/01/10 15:34:06 INFO Utils: Copying /home/ec2-user/ADZD-project/deps.zip to /tmp/spark-1bd8f550-636b-4f62-8957-0a9638444f61/userFiles-d6a36d89-1a82-4073-8ac8-2238b2668704/deps.zip
+26/01/10 15:34:06 INFO Executor: Starting executor ID driver on host ip-172-31-69-193.ec2.internal
+26/01/10 15:34:06 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+26/01/10 15:34:06 INFO Executor: Fetching file:///home/ec2-user/ADZD-project/deps.zip with timestamp 1768059245142
+26/01/10 15:34:06 INFO Utils: /home/ec2-user/ADZD-project/deps.zip has been previously copied to /tmp/spark-1bd8f550-636b-4f62-8957-0a9638444f61/userFiles-d6a36d89-1a82-4073-8ac8-2238b2668704/deps.zip
+26/01/10 15:34:06 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45975.
+26/01/10 15:34:06 INFO NettyBlockTransferService: Server created on ip-172-31-69-193.ec2.internal:45975
+26/01/10 15:34:06 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/01/10 15:34:06 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, ip-172-31-69-193.ec2.internal, 45975, None)
+26/01/10 15:34:06 INFO BlockManagerMasterEndpoint: Registering block manager ip-172-31-69-193.ec2.internal:45975 with 434.4 MiB RAM, BlockManagerId(driver, ip-172-31-69-193.ec2.internal, 45975, None)
+26/01/10 15:34:06 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, ip-172-31-69-193.ec2.internal, 45975, None)
+26/01/10 15:34:06 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, ip-172-31-69-193.ec2.internal, 45975, None)
+26/01/10 15:34:06 INFO SingleEventLogFileWriter: Logging events to file:/opt/spark-events/local-1768059246347.inprogress
+2026-01-10 15:34:07,226 | INFO | spark.ingest.alpha_vantage | Ingest start. pairs=[('EUR', 'USD'), ('GBP', 'USD'), ('USD', 'JPY')], parallelism=1, ingest_date=2026-01-10, min_sleep=1.1
+26/01/10 15:34:08 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+26/01/10 15:34:08 INFO SharedState: Warehouse path is 'file:/tmp/spark-warehouse'.
+26/01/10 15:34:12 INFO CodeGenerator: Code generated in 350.27345 ms
+26/01/10 15:34:12 INFO CodeGenerator: Code generated in 56.155102 ms
+26/01/10 15:34:12 INFO DAGScheduler: Registering RDD 12 (count at NativeMethodAccessorImpl.java:0) as input to shuffle 0
+26/01/10 15:34:12 INFO DAGScheduler: Got map stage job 0 (count at NativeMethodAccessorImpl.java:0) with 1 output partitions
+26/01/10 15:34:12 INFO DAGScheduler: Final stage: ShuffleMapStage 0 (count at NativeMethodAccessorImpl.java:0)
+26/01/10 15:34:12 INFO DAGScheduler: Parents of final stage: List()
+26/01/10 15:34:12 INFO DAGScheduler: Missing parents: List()
+26/01/10 15:34:12 INFO DAGScheduler: Submitting ShuffleMapStage 0 (MapPartitionsRDD[12] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/01/10 15:34:12 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 38.0 KiB, free 434.4 MiB)
+26/01/10 15:34:13 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 17.5 KiB, free 434.3 MiB)
+26/01/10 15:34:13 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on ip-172-31-69-193.ec2.internal:45975 (size: 17.5 KiB, free: 434.4 MiB)
+26/01/10 15:34:13 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1535
+26/01/10 15:34:13 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 0 (MapPartitionsRDD[12] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+26/01/10 15:34:13 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+26/01/10 15:34:13 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (ip-172-31-69-193.ec2.internal, executor driver, partition 0, PROCESS_LOCAL, 7290 bytes) 
+26/01/10 15:34:13 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+26/01/10 15:34:18 INFO PythonRunner: Times: total = 4936, boot = 680, init = 125, finish = 4131
+26/01/10 15:34:18 INFO MemoryStore: Block rdd_7_0 stored as values in memory (estimated size 411.4 KiB, free 433.9 MiB)
+26/01/10 15:34:18 INFO BlockManagerInfo: Added rdd_7_0 in memory on ip-172-31-69-193.ec2.internal:45975 (size: 411.4 KiB, free: 434.0 MiB)
+26/01/10 15:34:19 INFO CodeGenerator: Code generated in 25.030352 ms
+26/01/10 15:34:19 INFO CodeGenerator: Code generated in 67.420662 ms
+26/01/10 15:34:19 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 2509 bytes result sent to driver
+26/01/10 15:34:19 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 5890 ms on ip-172-31-69-193.ec2.internal (executor driver) (1/1)
+26/01/10 15:34:19 INFO PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 60147
+26/01/10 15:34:19 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+26/01/10 15:34:19 INFO DAGScheduler: ShuffleMapStage 0 (count at NativeMethodAccessorImpl.java:0) finished in 6.587 s
+26/01/10 15:34:19 INFO DAGScheduler: looking for newly runnable stages
+26/01/10 15:34:19 INFO DAGScheduler: running: Set()
+26/01/10 15:34:19 INFO DAGScheduler: waiting: Set()
+26/01/10 15:34:19 INFO DAGScheduler: failed: Set()
+26/01/10 15:34:19 INFO CodeGenerator: Code generated in 25.318514 ms
+26/01/10 15:34:19 INFO SparkContext: Starting job: count at NativeMethodAccessorImpl.java:0
+26/01/10 15:34:19 INFO DAGScheduler: Got job 1 (count at NativeMethodAccessorImpl.java:0) with 1 output partitions
+26/01/10 15:34:19 INFO DAGScheduler: Final stage: ResultStage 2 (count at NativeMethodAccessorImpl.java:0)
+26/01/10 15:34:19 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 1)
+26/01/10 15:34:19 INFO DAGScheduler: Missing parents: List()
+26/01/10 15:34:19 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[15] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/01/10 15:34:19 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 12.2 KiB, free 433.9 MiB)
+26/01/10 15:34:19 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 5.9 KiB, free 433.9 MiB)
+26/01/10 15:34:19 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on ip-172-31-69-193.ec2.internal:45975 (size: 5.9 KiB, free: 434.0 MiB)
+26/01/10 15:34:19 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1535
+26/01/10 15:34:19 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 2 (MapPartitionsRDD[15] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+26/01/10 15:34:19 INFO TaskSchedulerImpl: Adding task set 2.0 with 1 tasks resource profile 0
+26/01/10 15:34:19 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 1) (ip-172-31-69-193.ec2.internal, executor driver, partition 0, NODE_LOCAL, 7363 bytes) 
+26/01/10 15:34:19 INFO Executor: Running task 0.0 in stage 2.0 (TID 1)
+26/01/10 15:34:19 INFO ShuffleBlockFetcherIterator: Getting 1 (60.0 B) non-empty blocks including 1 (60.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/01/10 15:34:19 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 12 ms
+26/01/10 15:34:19 INFO Executor: Finished task 0.0 in stage 2.0 (TID 1). 3894 bytes result sent to driver
+26/01/10 15:34:19 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 1) in 111 ms on ip-172-31-69-193.ec2.internal (executor driver) (1/1)
+26/01/10 15:34:19 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+26/01/10 15:34:19 INFO DAGScheduler: ResultStage 2 (count at NativeMethodAccessorImpl.java:0) finished in 0.158 s
+26/01/10 15:34:19 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+26/01/10 15:34:19 INFO TaskSchedulerImpl: Killing all running tasks in stage 2: Stage finished
+26/01/10 15:34:19 INFO DAGScheduler: Job 1 finished: count at NativeMethodAccessorImpl.java:0, took 0.208779 s
+26/01/10 15:34:19 INFO CodeGenerator: Code generated in 39.371933 ms
+26/01/10 15:34:19 INFO DefaultCachedBatchSerializer: Predicate isnotnull(date#0) generates partition filter: ((date.count#607 - date.nullCount#606) > 0)
+26/01/10 15:34:19 INFO DAGScheduler: Registering RDD 20 (count at NativeMethodAccessorImpl.java:0) as input to shuffle 1
+26/01/10 15:34:19 INFO DAGScheduler: Got map stage job 2 (count at NativeMethodAccessorImpl.java:0) with 1 output partitions
+26/01/10 15:34:19 INFO DAGScheduler: Final stage: ShuffleMapStage 3 (count at NativeMethodAccessorImpl.java:0)
+26/01/10 15:34:19 INFO DAGScheduler: Parents of final stage: List()
+26/01/10 15:34:19 INFO DAGScheduler: Missing parents: List()
+26/01/10 15:34:19 INFO DAGScheduler: Submitting ShuffleMapStage 3 (MapPartitionsRDD[20] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/01/10 15:34:20 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 46.8 KiB, free 433.9 MiB)
+26/01/10 15:34:20 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 21.6 KiB, free 433.9 MiB)
+26/01/10 15:34:20 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on ip-172-31-69-193.ec2.internal:45975 (size: 21.6 KiB, free: 434.0 MiB)
+26/01/10 15:34:20 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1535
+26/01/10 15:34:20 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 3 (MapPartitionsRDD[20] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+26/01/10 15:34:20 INFO TaskSchedulerImpl: Adding task set 3.0 with 1 tasks resource profile 0
+26/01/10 15:34:20 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 2) (ip-172-31-69-193.ec2.internal, executor driver, partition 0, PROCESS_LOCAL, 7290 bytes) 
+26/01/10 15:34:20 INFO Executor: Running task 0.0 in stage 3.0 (TID 2)
+26/01/10 15:34:20 INFO BlockManager: Found block rdd_7_0 locally
+26/01/10 15:34:20 INFO CodeGenerator: Code generated in 23.202289 ms
+26/01/10 15:34:20 INFO CodeGenerator: Code generated in 48.113469 ms
+26/01/10 15:34:20 INFO Executor: Finished task 0.0 in stage 3.0 (TID 2). 2479 bytes result sent to driver
+26/01/10 15:34:20 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 2) in 163 ms on ip-172-31-69-193.ec2.internal (executor driver) (1/1)
+26/01/10 15:34:20 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+26/01/10 15:34:20 INFO DAGScheduler: ShuffleMapStage 3 (count at NativeMethodAccessorImpl.java:0) finished in 0.214 s
+26/01/10 15:34:20 INFO DAGScheduler: looking for newly runnable stages
+26/01/10 15:34:20 INFO DAGScheduler: running: Set()
+26/01/10 15:34:20 INFO DAGScheduler: waiting: Set()
+26/01/10 15:34:20 INFO DAGScheduler: failed: Set()
+26/01/10 15:34:20 INFO SparkContext: Starting job: count at NativeMethodAccessorImpl.java:0
+26/01/10 15:34:20 INFO DAGScheduler: Got job 3 (count at NativeMethodAccessorImpl.java:0) with 1 output partitions
+26/01/10 15:34:20 INFO DAGScheduler: Final stage: ResultStage 5 (count at NativeMethodAccessorImpl.java:0)
+26/01/10 15:34:20 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 4)
+26/01/10 15:34:20 INFO DAGScheduler: Missing parents: List()
+26/01/10 15:34:20 INFO DAGScheduler: Submitting ResultStage 5 (MapPartitionsRDD[23] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/01/10 15:34:20 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 12.2 KiB, free 433.8 MiB)
+26/01/10 15:34:20 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 5.9 KiB, free 433.8 MiB)
+26/01/10 15:34:20 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on ip-172-31-69-193.ec2.internal:45975 (size: 5.9 KiB, free: 433.9 MiB)
+26/01/10 15:34:20 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1535
+26/01/10 15:34:20 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 5 (MapPartitionsRDD[23] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+26/01/10 15:34:20 INFO TaskSchedulerImpl: Adding task set 5.0 with 1 tasks resource profile 0
+26/01/10 15:34:20 INFO TaskSetManager: Starting task 0.0 in stage 5.0 (TID 3) (ip-172-31-69-193.ec2.internal, executor driver, partition 0, NODE_LOCAL, 7363 bytes) 
+26/01/10 15:34:20 INFO Executor: Running task 0.0 in stage 5.0 (TID 3)
+26/01/10 15:34:20 INFO ShuffleBlockFetcherIterator: Getting 1 (60.0 B) non-empty blocks including 1 (60.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/01/10 15:34:20 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+26/01/10 15:34:20 INFO Executor: Finished task 0.0 in stage 5.0 (TID 3). 3808 bytes result sent to driver
+26/01/10 15:34:20 INFO TaskSetManager: Finished task 0.0 in stage 5.0 (TID 3) in 33 ms on ip-172-31-69-193.ec2.internal (executor driver) (1/1)
+26/01/10 15:34:20 INFO DAGScheduler: ResultStage 5 (count at NativeMethodAccessorImpl.java:0) finished in 0.064 s
+26/01/10 15:34:20 INFO DAGScheduler: Job 3 is finished. Cancelling potential speculative or zombie tasks for this job
+26/01/10 15:34:20 INFO TaskSchedulerImpl: Removed TaskSet 5.0, whose tasks have all completed, from pool 
+26/01/10 15:34:20 INFO TaskSchedulerImpl: Killing all running tasks in stage 5: Stage finished
+26/01/10 15:34:20 INFO DAGScheduler: Job 3 finished: count at NativeMethodAccessorImpl.java:0, took 0.084183 s
+26/01/10 15:34:20 INFO CodeGenerator: Code generated in 15.504734 ms
+26/01/10 15:34:20 INFO DefaultCachedBatchSerializer: Predicate isnull(date#0) generates partition filter: (date.nullCount#897 > 0)
+26/01/10 15:34:20 INFO DefaultCachedBatchSerializer: Predicate isnotnull(error#10) generates partition filter: ((error.count#948 - error.nullCount#947) > 0)
+26/01/10 15:34:20 INFO DAGScheduler: Registering RDD 28 (count at NativeMethodAccessorImpl.java:0) as input to shuffle 2
+26/01/10 15:34:20 INFO DAGScheduler: Got map stage job 4 (count at NativeMethodAccessorImpl.java:0) with 1 output partitions
+26/01/10 15:34:20 INFO DAGScheduler: Final stage: ShuffleMapStage 6 (count at NativeMethodAccessorImpl.java:0)
+26/01/10 15:34:20 INFO DAGScheduler: Parents of final stage: List()
+26/01/10 15:34:20 INFO DAGScheduler: Missing parents: List()
+26/01/10 15:34:20 INFO DAGScheduler: Submitting ShuffleMapStage 6 (MapPartitionsRDD[28] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/01/10 15:34:20 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 47.2 KiB, free 433.8 MiB)
+26/01/10 15:34:20 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 21.6 KiB, free 433.8 MiB)
+26/01/10 15:34:20 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on ip-172-31-69-193.ec2.internal:45975 (size: 21.6 KiB, free: 433.9 MiB)
+26/01/10 15:34:20 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1535
+26/01/10 15:34:20 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 6 (MapPartitionsRDD[28] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+26/01/10 15:34:20 INFO TaskSchedulerImpl: Adding task set 6.0 with 1 tasks resource profile 0
+26/01/10 15:34:20 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 4) (ip-172-31-69-193.ec2.internal, executor driver, partition 0, PROCESS_LOCAL, 7290 bytes) 
+26/01/10 15:34:20 INFO Executor: Running task 0.0 in stage 6.0 (TID 4)
+26/01/10 15:34:20 INFO BlockManager: Found block rdd_7_0 locally
+26/01/10 15:34:20 INFO CodeGenerator: Code generated in 7.158642 ms
+26/01/10 15:34:20 INFO CodeGenerator: Code generated in 17.331753 ms
+26/01/10 15:34:20 INFO Executor: Finished task 0.0 in stage 6.0 (TID 4). 2479 bytes result sent to driver
+26/01/10 15:34:20 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 4) in 61 ms on ip-172-31-69-193.ec2.internal (executor driver) (1/1)
+26/01/10 15:34:20 INFO TaskSchedulerImpl: Removed TaskSet 6.0, whose tasks have all completed, from pool 
+26/01/10 15:34:20 INFO DAGScheduler: ShuffleMapStage 6 (count at NativeMethodAccessorImpl.java:0) finished in 0.082 s
+26/01/10 15:34:20 INFO DAGScheduler: looking for newly runnable stages
+26/01/10 15:34:20 INFO DAGScheduler: running: Set()
+26/01/10 15:34:20 INFO DAGScheduler: waiting: Set()
+26/01/10 15:34:20 INFO DAGScheduler: failed: Set()
+26/01/10 15:34:20 INFO SparkContext: Starting job: count at NativeMethodAccessorImpl.java:0
+26/01/10 15:34:20 INFO DAGScheduler: Got job 5 (count at NativeMethodAccessorImpl.java:0) with 1 output partitions
+26/01/10 15:34:20 INFO DAGScheduler: Final stage: ResultStage 8 (count at NativeMethodAccessorImpl.java:0)
+26/01/10 15:34:20 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 7)
+26/01/10 15:34:20 INFO DAGScheduler: Missing parents: List()
+26/01/10 15:34:20 INFO DAGScheduler: Submitting ResultStage 8 (MapPartitionsRDD[31] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/01/10 15:34:20 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 12.2 KiB, free 433.8 MiB)
+26/01/10 15:34:20 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 5.8 KiB, free 433.8 MiB)
+26/01/10 15:34:20 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on ip-172-31-69-193.ec2.internal:45975 (size: 5.8 KiB, free: 433.9 MiB)
+26/01/10 15:34:20 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:1535
+26/01/10 15:34:20 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 8 (MapPartitionsRDD[31] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+26/01/10 15:34:20 INFO TaskSchedulerImpl: Adding task set 8.0 with 1 tasks resource profile 0
+26/01/10 15:34:20 INFO TaskSetManager: Starting task 0.0 in stage 8.0 (TID 5) (ip-172-31-69-193.ec2.internal, executor driver, partition 0, NODE_LOCAL, 7363 bytes) 
+26/01/10 15:34:20 INFO Executor: Running task 0.0 in stage 8.0 (TID 5)
+26/01/10 15:34:20 INFO ShuffleBlockFetcherIterator: Getting 1 (60.0 B) non-empty blocks including 1 (60.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/01/10 15:34:20 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+26/01/10 15:34:20 INFO Executor: Finished task 0.0 in stage 8.0 (TID 5). 3801 bytes result sent to driver
+26/01/10 15:34:20 INFO TaskSetManager: Finished task 0.0 in stage 8.0 (TID 5) in 19 ms on ip-172-31-69-193.ec2.internal (executor driver) (1/1)
+26/01/10 15:34:20 INFO TaskSchedulerImpl: Removed TaskSet 8.0, whose tasks have all completed, from pool 
+26/01/10 15:34:20 INFO DAGScheduler: ResultStage 8 (count at NativeMethodAccessorImpl.java:0) finished in 0.066 s
+26/01/10 15:34:20 INFO DAGScheduler: Job 5 is finished. Cancelling potential speculative or zombie tasks for this job
+26/01/10 15:34:20 INFO TaskSchedulerImpl: Killing all running tasks in stage 8: Stage finished
+26/01/10 15:34:20 INFO DAGScheduler: Job 5 finished: count at NativeMethodAccessorImpl.java:0, took 0.079615 s
+26/01/10 15:34:20 INFO BlockManagerInfo: Removed broadcast_4_piece0 on ip-172-31-69-193.ec2.internal:45975 in memory (size: 21.6 KiB, free: 433.9 MiB)
+26/01/10 15:34:20 INFO BlockManagerInfo: Removed broadcast_2_piece0 on ip-172-31-69-193.ec2.internal:45975 in memory (size: 21.6 KiB, free: 434.0 MiB)
+26/01/10 15:34:20 INFO BlockManagerInfo: Removed broadcast_3_piece0 on ip-172-31-69-193.ec2.internal:45975 in memory (size: 5.9 KiB, free: 434.0 MiB)
+26/01/10 15:34:20 INFO BlockManagerInfo: Removed broadcast_1_piece0 on ip-172-31-69-193.ec2.internal:45975 in memory (size: 5.9 KiB, free: 434.0 MiB)
+26/01/10 15:34:21 INFO ParquetUtils: Using default output committer for Parquet: org.apache.parquet.hadoop.ParquetOutputCommitter
+26/01/10 15:34:21 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/01/10 15:34:21 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/01/10 15:34:21 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+26/01/10 15:34:21 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/01/10 15:34:21 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/01/10 15:34:21 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+26/01/10 15:34:21 INFO CodeGenerator: Code generated in 30.305603 ms
+26/01/10 15:34:21 INFO DefaultCachedBatchSerializer: Predicate isnotnull(date#0) generates partition filter: ((date.count#1131 - date.nullCount#1130) > 0)
+26/01/10 15:34:21 INFO SparkContext: Starting job: parquet at NativeMethodAccessorImpl.java:0
+26/01/10 15:34:21 INFO DAGScheduler: Got job 6 (parquet at NativeMethodAccessorImpl.java:0) with 1 output partitions
+26/01/10 15:34:21 INFO DAGScheduler: Final stage: ResultStage 9 (parquet at NativeMethodAccessorImpl.java:0)
+26/01/10 15:34:21 INFO DAGScheduler: Parents of final stage: List()
+26/01/10 15:34:21 INFO DAGScheduler: Missing parents: List()
+26/01/10 15:34:21 INFO DAGScheduler: Submitting ResultStage 9 (MapPartitionsRDD[36] at parquet at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/01/10 15:34:21 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 254.9 KiB, free 433.7 MiB)
+26/01/10 15:34:21 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 94.3 KiB, free 433.6 MiB)
+26/01/10 15:34:21 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on ip-172-31-69-193.ec2.internal:45975 (size: 94.3 KiB, free: 433.9 MiB)
+26/01/10 15:34:21 INFO SparkContext: Created broadcast 6 from broadcast at DAGScheduler.scala:1535
+26/01/10 15:34:21 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 9 (MapPartitionsRDD[36] at parquet at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+26/01/10 15:34:21 INFO TaskSchedulerImpl: Adding task set 9.0 with 1 tasks resource profile 0
+26/01/10 15:34:21 INFO TaskSetManager: Starting task 0.0 in stage 9.0 (TID 6) (ip-172-31-69-193.ec2.internal, executor driver, partition 0, PROCESS_LOCAL, 7301 bytes) 
+26/01/10 15:34:21 INFO Executor: Running task 0.0 in stage 9.0 (TID 6)
+26/01/10 15:34:21 INFO BlockManager: Found block rdd_7_0 locally
+26/01/10 15:34:21 INFO CodeGenerator: Code generated in 32.91607 ms
+26/01/10 15:34:21 INFO CodeGenerator: Code generated in 15.801833 ms
+26/01/10 15:34:21 INFO CodeGenerator: Code generated in 24.631852 ms
+26/01/10 15:34:21 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/01/10 15:34:21 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/01/10 15:34:21 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+26/01/10 15:34:21 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/01/10 15:34:21 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/01/10 15:34:21 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+26/01/10 15:34:21 INFO CodeGenerator: Code generated in 36.014211 ms
+26/01/10 15:34:21 INFO CodeGenerator: Code generated in 8.453775 ms
+26/01/10 15:34:21 INFO CodeGenerator: Code generated in 38.967554 ms
+26/01/10 15:34:21 INFO CodecConfig: Compression: SNAPPY
+26/01/10 15:34:21 INFO CodecConfig: Compression: SNAPPY
+26/01/10 15:34:21 INFO ParquetOutputFormat: ParquetRecordWriter [block size: 134217728b, row group padding size: 8388608b, validating: false]
+26/01/10 15:34:21 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "date",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "open",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "high",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "low",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "close",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "from_symbol",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "to_symbol",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "frequency",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "error",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  optional binary date (STRING);
+  optional double open;
+  optional double high;
+  optional double low;
+  optional double close;
+  optional binary from_symbol (STRING);
+  optional binary to_symbol (STRING);
+  optional binary frequency (STRING);
+  optional binary error (STRING);
+}
+
+       
+26/01/10 15:34:21 INFO CodecPool: Got brand-new compressor [.snappy]
+26/01/10 15:34:22 INFO BlockManagerInfo: Removed broadcast_5_piece0 on ip-172-31-69-193.ec2.internal:45975 in memory (size: 5.8 KiB, free: 433.9 MiB)
+26/01/10 15:34:22 INFO CodecConfig: Compression: SNAPPY
+26/01/10 15:34:22 INFO CodecConfig: Compression: SNAPPY
+26/01/10 15:34:22 INFO ParquetOutputFormat: ParquetRecordWriter [block size: 134217728b, row group padding size: 8388608b, validating: false]
+26/01/10 15:34:22 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "date",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "open",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "high",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "low",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "close",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "from_symbol",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "to_symbol",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "frequency",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "error",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  optional binary date (STRING);
+  optional double open;
+  optional double high;
+  optional double low;
+  optional double close;
+  optional binary from_symbol (STRING);
+  optional binary to_symbol (STRING);
+  optional binary frequency (STRING);
+  optional binary error (STRING);
+}
+
+       
+26/01/10 15:34:22 INFO CodecConfig: Compression: SNAPPY
+26/01/10 15:34:22 INFO CodecConfig: Compression: SNAPPY
+26/01/10 15:34:22 INFO ParquetOutputFormat: ParquetRecordWriter [block size: 134217728b, row group padding size: 8388608b, validating: false]
+26/01/10 15:34:22 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "date",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "open",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "high",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "low",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "close",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "from_symbol",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "to_symbol",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "frequency",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "error",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  optional binary date (STRING);
+  optional double open;
+  optional double high;
+  optional double low;
+  optional double close;
+  optional binary from_symbol (STRING);
+  optional binary to_symbol (STRING);
+  optional binary frequency (STRING);
+  optional binary error (STRING);
+}
+
+       
+26/01/10 15:34:23 INFO FileOutputCommitter: Saved output of task 'attempt_202601101534217288271547609163896_0009_m_000000_6' to file:/home/ec2-user/ADZD-project/data/raw/alpha_vantage/market=forex/frequency=daily/_temporary/0/task_202601101534217288271547609163896_0009_m_000000
+26/01/10 15:34:23 INFO SparkHadoopMapRedUtil: attempt_202601101534217288271547609163896_0009_m_000000_6: Committed. Elapsed time: 8 ms.
+26/01/10 15:34:23 INFO Executor: Finished task 0.0 in stage 9.0 (TID 6). 2692 bytes result sent to driver
+26/01/10 15:34:23 INFO TaskSetManager: Finished task 0.0 in stage 9.0 (TID 6) in 1811 ms on ip-172-31-69-193.ec2.internal (executor driver) (1/1)
+26/01/10 15:34:23 INFO TaskSchedulerImpl: Removed TaskSet 9.0, whose tasks have all completed, from pool 
+26/01/10 15:34:23 INFO DAGScheduler: ResultStage 9 (parquet at NativeMethodAccessorImpl.java:0) finished in 1.881 s
+26/01/10 15:34:23 INFO DAGScheduler: Job 6 is finished. Cancelling potential speculative or zombie tasks for this job
+26/01/10 15:34:23 INFO TaskSchedulerImpl: Killing all running tasks in stage 9: Stage finished
+26/01/10 15:34:23 INFO DAGScheduler: Job 6 finished: parquet at NativeMethodAccessorImpl.java:0, took 1.892270 s
+26/01/10 15:34:23 INFO FileFormatWriter: Start to commit write Job c0bab8fd-e1fa-4601-abe1-0479a522e58c.
+26/01/10 15:34:23 INFO FileFormatWriter: Write Job c0bab8fd-e1fa-4601-abe1-0479a522e58c committed. Elapsed time: 28 ms.
+26/01/10 15:34:23 INFO FileFormatWriter: Finished processing stats for write job c0bab8fd-e1fa-4601-abe1-0479a522e58c.
+2026-01-10 15:34:23,153 | INFO | spark.ingest.alpha_vantage | Dane OK zapisane do: data/raw/alpha_vantage/market=forex/frequency=daily (partitionBy pair, ingest_date)
+2026-01-10 15:34:23,153 | INFO | spark.ingest.alpha_vantage | Liczba rekordów OK: 15000
+2026-01-10 15:34:23,153 | INFO | spark.ingest.alpha_vantage | Liczba rekordów błędów: 0
+26/01/10 15:34:23 INFO SparkContext: SparkContext is stopping with exitCode 0.
+26/01/10 15:34:23 INFO SparkUI: Stopped Spark web UI at http://ip-172-31-69-193.ec2.internal:4040
+26/01/10 15:34:23 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+26/01/10 15:34:23 INFO MemoryStore: MemoryStore cleared
+26/01/10 15:34:23 INFO BlockManager: BlockManager stopped
+26/01/10 15:34:23 INFO BlockManagerMaster: BlockManagerMaster stopped
+26/01/10 15:34:23 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+26/01/10 15:34:23 INFO SparkContext: Successfully stopped SparkContext
+26/01/10 15:34:24 INFO ShutdownHookManager: Shutdown hook called
+26/01/10 15:34:24 INFO ShutdownHookManager: Deleting directory /tmp/spark-1bd8f550-636b-4f62-8957-0a9638444f61
+26/01/10 15:34:24 INFO ShutdownHookManager: Deleting directory /tmp/spark-72ad0c95-dda9-4765-8354-13c79a6c6eb3
+26/01/10 15:34:24 INFO ShutdownHookManager: Deleting directory /tmp/spark-1bd8f550-636b-4f62-8957-0a9638444f61/pyspark-22506a92-1a05-4825-938c-3dd9b8d39d15
+26/01/10 15:34:26 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/01/10 15:34:28 INFO SparkContext: Running Spark version 3.4.2
+26/01/10 15:34:28 INFO ResourceUtils: ==============================================================
+26/01/10 15:34:28 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/01/10 15:34:28 INFO ResourceUtils: ==============================================================
+26/01/10 15:34:28 INFO SparkContext: Submitted application: forex-daily-preprocess
+26/01/10 15:34:28 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/01/10 15:34:28 INFO ResourceProfile: Limiting resource is cpu
+26/01/10 15:34:28 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/01/10 15:34:28 INFO SecurityManager: Changing view acls to: ec2-user
+26/01/10 15:34:28 INFO SecurityManager: Changing modify acls to: ec2-user
+26/01/10 15:34:28 INFO SecurityManager: Changing view acls groups to: 
+26/01/10 15:34:28 INFO SecurityManager: Changing modify acls groups to: 
+26/01/10 15:34:28 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ec2-user; groups with view permissions: EMPTY; users with modify permissions: ec2-user; groups with modify permissions: EMPTY
+26/01/10 15:34:28 INFO Utils: Successfully started service 'sparkDriver' on port 34755.
+26/01/10 15:34:28 INFO SparkEnv: Registering MapOutputTracker
+26/01/10 15:34:28 INFO SparkEnv: Registering BlockManagerMaster
+26/01/10 15:34:28 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/01/10 15:34:28 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/01/10 15:34:28 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/01/10 15:34:28 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-e514f3fe-e89a-4371-9c49-d1e9909579d1
+26/01/10 15:34:28 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+26/01/10 15:34:28 INFO SparkEnv: Registering OutputCommitCoordinator
+26/01/10 15:34:29 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/01/10 15:34:29 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/01/10 15:34:29 INFO SparkContext: Added file file:///home/ec2-user/ADZD-project/deps.zip at file:///home/ec2-user/ADZD-project/deps.zip with timestamp 1768059268047
+26/01/10 15:34:29 INFO Utils: Copying /home/ec2-user/ADZD-project/deps.zip to /tmp/spark-728bda28-3bfe-4893-9bc7-ca75dbb55b3d/userFiles-0c97b5ac-45ba-4bd0-9262-071079a50b37/deps.zip
+26/01/10 15:34:29 INFO Executor: Starting executor ID driver on host ip-172-31-69-193.ec2.internal
+26/01/10 15:34:29 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+26/01/10 15:34:29 INFO Executor: Fetching file:///home/ec2-user/ADZD-project/deps.zip with timestamp 1768059268047
+26/01/10 15:34:29 INFO Utils: /home/ec2-user/ADZD-project/deps.zip has been previously copied to /tmp/spark-728bda28-3bfe-4893-9bc7-ca75dbb55b3d/userFiles-0c97b5ac-45ba-4bd0-9262-071079a50b37/deps.zip
+26/01/10 15:34:29 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 36577.
+26/01/10 15:34:29 INFO NettyBlockTransferService: Server created on ip-172-31-69-193.ec2.internal:36577
+26/01/10 15:34:29 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/01/10 15:34:29 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, ip-172-31-69-193.ec2.internal, 36577, None)
+26/01/10 15:34:29 INFO BlockManagerMasterEndpoint: Registering block manager ip-172-31-69-193.ec2.internal:36577 with 434.4 MiB RAM, BlockManagerId(driver, ip-172-31-69-193.ec2.internal, 36577, None)
+26/01/10 15:34:29 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, ip-172-31-69-193.ec2.internal, 36577, None)
+26/01/10 15:34:29 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, ip-172-31-69-193.ec2.internal, 36577, None)
+26/01/10 15:34:29 INFO SingleEventLogFileWriter: Logging events to file:/opt/spark-events/local-1768059269268.inprogress
+26/01/10 15:34:30 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+26/01/10 15:34:30 INFO SharedState: Warehouse path is 'file:/tmp/spark-warehouse'.
+2026-01-10 15:34:31,097 | INFO | spark.preprocess.forex_daily | Reading raw from: data/raw/alpha_vantage/market=forex/frequency=daily
+26/01/10 15:34:31 INFO InMemoryFileIndex: It took 85 ms to list leaf files for 1 paths.
+26/01/10 15:34:31 INFO SparkContext: Starting job: parquet at NativeMethodAccessorImpl.java:0
+26/01/10 15:34:31 INFO DAGScheduler: Got job 0 (parquet at NativeMethodAccessorImpl.java:0) with 1 output partitions
+26/01/10 15:34:31 INFO DAGScheduler: Final stage: ResultStage 0 (parquet at NativeMethodAccessorImpl.java:0)
+26/01/10 15:34:31 INFO DAGScheduler: Parents of final stage: List()
+26/01/10 15:34:31 INFO DAGScheduler: Missing parents: List()
+26/01/10 15:34:32 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[1] at parquet at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/01/10 15:34:32 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 104.2 KiB, free 434.3 MiB)
+26/01/10 15:34:32 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 37.5 KiB, free 434.3 MiB)
+26/01/10 15:34:32 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on ip-172-31-69-193.ec2.internal:36577 (size: 37.5 KiB, free: 434.4 MiB)
+26/01/10 15:34:32 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1535
+26/01/10 15:34:32 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at parquet at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+26/01/10 15:34:32 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+26/01/10 15:34:32 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (ip-172-31-69-193.ec2.internal, executor driver, partition 0, PROCESS_LOCAL, 7444 bytes) 
+26/01/10 15:34:32 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+26/01/10 15:34:33 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1145 bytes result sent to driver
+26/01/10 15:34:33 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 578 ms on ip-172-31-69-193.ec2.internal (executor driver) (1/1)
+26/01/10 15:34:33 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+26/01/10 15:34:33 INFO DAGScheduler: ResultStage 0 (parquet at NativeMethodAccessorImpl.java:0) finished in 1.054 s
+26/01/10 15:34:33 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+26/01/10 15:34:33 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+26/01/10 15:34:33 INFO DAGScheduler: Job 0 finished: parquet at NativeMethodAccessorImpl.java:0, took 1.157803 s
+26/01/10 15:34:33 INFO BlockManagerInfo: Removed broadcast_0_piece0 on ip-172-31-69-193.ec2.internal:36577 in memory (size: 37.5 KiB, free: 434.4 MiB)
+26/01/10 15:34:35 INFO DataSourceStrategy: Pruning directories with: 
+26/01/10 15:34:35 INFO FileSourceStrategy: Pushed Filters: 
+26/01/10 15:34:35 INFO FileSourceStrategy: Post-Scan Filters: 
+26/01/10 15:34:36 INFO CodeGenerator: Code generated in 348.072778 ms
+26/01/10 15:34:36 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 202.4 KiB, free 434.2 MiB)
+26/01/10 15:34:36 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 35.2 KiB, free 434.2 MiB)
+26/01/10 15:34:36 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on ip-172-31-69-193.ec2.internal:36577 (size: 35.2 KiB, free: 434.4 MiB)
+26/01/10 15:34:36 INFO SparkContext: Created broadcast 1 from collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:96
+26/01/10 15:34:36 INFO FileSourceScanExec: Planning scan with bin packing, max size: 6498810 bytes, open cost is considered as scanning 4194304 bytes.
+26/01/10 15:34:36 INFO DAGScheduler: Registering RDD 5 (collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:96) as input to shuffle 0
+26/01/10 15:34:36 INFO DAGScheduler: Got map stage job 1 (collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:96) with 2 output partitions
+26/01/10 15:34:36 INFO DAGScheduler: Final stage: ShuffleMapStage 1 (collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:96)
+26/01/10 15:34:36 INFO DAGScheduler: Parents of final stage: List()
+26/01/10 15:34:36 INFO DAGScheduler: Missing parents: List()
+26/01/10 15:34:36 INFO DAGScheduler: Submitting ShuffleMapStage 1 (MapPartitionsRDD[5] at collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:96), which has no missing parents
+26/01/10 15:34:36 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 17.5 KiB, free 434.2 MiB)
+26/01/10 15:34:36 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 7.9 KiB, free 434.1 MiB)
+26/01/10 15:34:36 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on ip-172-31-69-193.ec2.internal:36577 (size: 7.9 KiB, free: 434.4 MiB)
+26/01/10 15:34:36 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1535
+26/01/10 15:34:36 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 1 (MapPartitionsRDD[5] at collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:96) (first 15 tasks are for partitions Vector(0, 1))
+26/01/10 15:34:36 INFO TaskSchedulerImpl: Adding task set 1.0 with 2 tasks resource profile 0
+26/01/10 15:34:36 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (ip-172-31-69-193.ec2.internal, executor driver, partition 0, PROCESS_LOCAL, 8423 bytes) 
+26/01/10 15:34:36 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 2) (ip-172-31-69-193.ec2.internal, executor driver, partition 1, PROCESS_LOCAL, 8140 bytes) 
+26/01/10 15:34:36 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+26/01/10 15:34:36 INFO Executor: Running task 1.0 in stage 1.0 (TID 2)
+26/01/10 15:34:36 INFO FileScanRDD: Reading File path: file:///home/ec2-user/ADZD-project/data/raw/alpha_vantage/market=forex/frequency=daily/pair=USD_JPY/ingest_date=2026-01-10/part-00000-3cf06f94-ff0e-4dd0-8626-97bc6eb6c2b2.c000.snappy.parquet, range: 0-114164, partition values: [USD_JPY,20463]
+26/01/10 15:34:36 INFO FileScanRDD: Reading File path: file:///home/ec2-user/ADZD-project/data/raw/alpha_vantage/market=forex/frequency=daily/pair=GBP_USD/ingest_date=2026-01-10/part-00000-3cf06f94-ff0e-4dd0-8626-97bc6eb6c2b2.c000.snappy.parquet, range: 0-150753, partition values: [GBP_USD,20463]
+26/01/10 15:34:36 INFO FileScanRDD: Reading File path: file:///home/ec2-user/ADZD-project/data/raw/alpha_vantage/market=forex/frequency=daily/pair=EUR_USD/ingest_date=2026-01-10/part-00000-3cf06f94-ff0e-4dd0-8626-97bc6eb6c2b2.c000.snappy.parquet, range: 0-149791, partition values: [EUR_USD,20463]
+26/01/10 15:34:37 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 2128 bytes result sent to driver
+26/01/10 15:34:37 INFO Executor: Finished task 1.0 in stage 1.0 (TID 2). 2128 bytes result sent to driver
+26/01/10 15:34:37 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 287 ms on ip-172-31-69-193.ec2.internal (executor driver) (1/2)
+26/01/10 15:34:37 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 2) in 289 ms on ip-172-31-69-193.ec2.internal (executor driver) (2/2)
+26/01/10 15:34:37 INFO DAGScheduler: ShuffleMapStage 1 (collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:96) finished in 0.399 s
+26/01/10 15:34:37 INFO DAGScheduler: looking for newly runnable stages
+26/01/10 15:34:37 INFO DAGScheduler: running: Set()
+26/01/10 15:34:37 INFO DAGScheduler: waiting: Set()
+26/01/10 15:34:37 INFO DAGScheduler: failed: Set()
+26/01/10 15:34:37 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+26/01/10 15:34:37 INFO CodeGenerator: Code generated in 26.502211 ms
+26/01/10 15:34:37 INFO SparkContext: Starting job: collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:96
+26/01/10 15:34:37 INFO DAGScheduler: Got job 2 (collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:96) with 1 output partitions
+26/01/10 15:34:37 INFO DAGScheduler: Final stage: ResultStage 3 (collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:96)
+26/01/10 15:34:37 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 2)
+26/01/10 15:34:37 INFO DAGScheduler: Missing parents: List()
+26/01/10 15:34:37 INFO DAGScheduler: Submitting ResultStage 3 (MapPartitionsRDD[8] at collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:96), which has no missing parents
+26/01/10 15:34:37 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 12.8 KiB, free 434.1 MiB)
+26/01/10 15:34:37 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 6.1 KiB, free 434.1 MiB)
+26/01/10 15:34:37 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on ip-172-31-69-193.ec2.internal:36577 (size: 6.1 KiB, free: 434.4 MiB)
+26/01/10 15:34:37 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1535
+26/01/10 15:34:37 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 3 (MapPartitionsRDD[8] at collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:96) (first 15 tasks are for partitions Vector(0))
+26/01/10 15:34:37 INFO TaskSchedulerImpl: Adding task set 3.0 with 1 tasks resource profile 0
+26/01/10 15:34:37 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 3) (ip-172-31-69-193.ec2.internal, executor driver, partition 0, NODE_LOCAL, 7363 bytes) 
+26/01/10 15:34:37 INFO Executor: Running task 0.0 in stage 3.0 (TID 3)
+26/01/10 15:34:37 INFO ShuffleBlockFetcherIterator: Getting 2 (120.0 B) non-empty blocks including 2 (120.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/01/10 15:34:37 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 15 ms
+26/01/10 15:34:37 INFO Executor: Finished task 0.0 in stage 3.0 (TID 3). 3808 bytes result sent to driver
+26/01/10 15:34:37 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 3) in 107 ms on ip-172-31-69-193.ec2.internal (executor driver) (1/1)
+26/01/10 15:34:37 INFO DAGScheduler: ResultStage 3 (collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:96) finished in 0.147 s
+26/01/10 15:34:37 INFO DAGScheduler: Job 2 is finished. Cancelling potential speculative or zombie tasks for this job
+26/01/10 15:34:37 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+26/01/10 15:34:37 INFO TaskSchedulerImpl: Killing all running tasks in stage 3: Stage finished
+26/01/10 15:34:37 INFO DAGScheduler: Job 2 finished: collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:96, took 0.181269 s
+2026-01-10 15:34:37,432 | INFO | spark.preprocess.forex_daily | Processing ingest_date: 2026-01-10
+26/01/10 15:34:38 INFO BlockManagerInfo: Removed broadcast_3_piece0 on ip-172-31-69-193.ec2.internal:36577 in memory (size: 6.1 KiB, free: 434.4 MiB)
+26/01/10 15:34:38 INFO BlockManagerInfo: Removed broadcast_2_piece0 on ip-172-31-69-193.ec2.internal:36577 in memory (size: 7.9 KiB, free: 434.4 MiB)
+2026-01-10 15:34:38,857 | INFO | spark.preprocess.forex_daily | Writing features to: data/features/forex_daily/frequency=daily (partitionBy pair, ingest_date)
+26/01/10 15:34:39 INFO DataSourceStrategy: Pruning directories with: isnotnull(ingest_date#10),(ingest_date#10 = 2026-01-10)
+26/01/10 15:34:39 INFO FileSourceStrategy: Pushed Filters: 
+26/01/10 15:34:39 INFO FileSourceStrategy: Post-Scan Filters: 
+26/01/10 15:34:39 INFO BlockManagerInfo: Removed broadcast_1_piece0 on ip-172-31-69-193.ec2.internal:36577 in memory (size: 35.2 KiB, free: 434.4 MiB)
+26/01/10 15:34:39 INFO CodeGenerator: Code generated in 184.267782 ms
+26/01/10 15:34:39 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 203.5 KiB, free 434.2 MiB)
+26/01/10 15:34:39 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 35.5 KiB, free 434.2 MiB)
+26/01/10 15:34:39 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on ip-172-31-69-193.ec2.internal:36577 (size: 35.5 KiB, free: 434.4 MiB)
+26/01/10 15:34:39 INFO SparkContext: Created broadcast 4 from parquet at NativeMethodAccessorImpl.java:0
+26/01/10 15:34:39 INFO InMemoryFileIndex: Selected 3 partitions out of 3, pruned 0.0% partitions.
+26/01/10 15:34:39 INFO FileSourceScanExec: Planning scan with bin packing, max size: 6498810 bytes, open cost is considered as scanning 4194304 bytes.
+26/01/10 15:34:39 INFO DAGScheduler: Registering RDD 13 (parquet at NativeMethodAccessorImpl.java:0) as input to shuffle 1
+26/01/10 15:34:39 INFO DAGScheduler: Got map stage job 3 (parquet at NativeMethodAccessorImpl.java:0) with 2 output partitions
+26/01/10 15:34:39 INFO DAGScheduler: Final stage: ShuffleMapStage 4 (parquet at NativeMethodAccessorImpl.java:0)
+26/01/10 15:34:39 INFO DAGScheduler: Parents of final stage: List()
+26/01/10 15:34:39 INFO DAGScheduler: Missing parents: List()
+26/01/10 15:34:39 INFO DAGScheduler: Submitting ShuffleMapStage 4 (MapPartitionsRDD[13] at parquet at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/01/10 15:34:39 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 42.5 KiB, free 434.1 MiB)
+26/01/10 15:34:39 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 17.3 KiB, free 434.1 MiB)
+26/01/10 15:34:39 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on ip-172-31-69-193.ec2.internal:36577 (size: 17.3 KiB, free: 434.3 MiB)
+26/01/10 15:34:39 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:1535
+26/01/10 15:34:39 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 4 (MapPartitionsRDD[13] at parquet at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+26/01/10 15:34:39 INFO TaskSchedulerImpl: Adding task set 4.0 with 2 tasks resource profile 0
+26/01/10 15:34:39 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 4) (ip-172-31-69-193.ec2.internal, executor driver, partition 0, PROCESS_LOCAL, 8423 bytes) 
+26/01/10 15:34:39 INFO TaskSetManager: Starting task 1.0 in stage 4.0 (TID 5) (ip-172-31-69-193.ec2.internal, executor driver, partition 1, PROCESS_LOCAL, 8140 bytes) 
+26/01/10 15:34:39 INFO Executor: Running task 0.0 in stage 4.0 (TID 4)
+26/01/10 15:34:39 INFO Executor: Running task 1.0 in stage 4.0 (TID 5)
+26/01/10 15:34:39 INFO CodeGenerator: Code generated in 34.395107 ms
+26/01/10 15:34:39 INFO CodeGenerator: Code generated in 27.246894 ms
+26/01/10 15:34:39 INFO FileScanRDD: Reading File path: file:///home/ec2-user/ADZD-project/data/raw/alpha_vantage/market=forex/frequency=daily/pair=USD_JPY/ingest_date=2026-01-10/part-00000-3cf06f94-ff0e-4dd0-8626-97bc6eb6c2b2.c000.snappy.parquet, range: 0-114164, partition values: [USD_JPY,20463]
+26/01/10 15:34:39 INFO FileScanRDD: Reading File path: file:///home/ec2-user/ADZD-project/data/raw/alpha_vantage/market=forex/frequency=daily/pair=GBP_USD/ingest_date=2026-01-10/part-00000-3cf06f94-ff0e-4dd0-8626-97bc6eb6c2b2.c000.snappy.parquet, range: 0-150753, partition values: [GBP_USD,20463]
+26/01/10 15:34:39 INFO CodecPool: Got brand-new decompressor [.snappy]
+26/01/10 15:34:39 INFO CodecPool: Got brand-new decompressor [.snappy]
+26/01/10 15:34:40 INFO FileScanRDD: Reading File path: file:///home/ec2-user/ADZD-project/data/raw/alpha_vantage/market=forex/frequency=daily/pair=EUR_USD/ingest_date=2026-01-10/part-00000-3cf06f94-ff0e-4dd0-8626-97bc6eb6c2b2.c000.snappy.parquet, range: 0-149791, partition values: [EUR_USD,20463]
+26/01/10 15:34:40 INFO CodeGenerator: Code generated in 49.960062 ms
+26/01/10 15:34:40 INFO CodeGenerator: Code generated in 52.796644 ms
+26/01/10 15:34:40 INFO CodeGenerator: Code generated in 16.065081 ms
+26/01/10 15:34:40 INFO CodeGenerator: Code generated in 32.704323 ms
+26/01/10 15:34:40 INFO CodeGenerator: Code generated in 26.373022 ms
+26/01/10 15:34:40 INFO Executor: Finished task 1.0 in stage 4.0 (TID 5). 2905 bytes result sent to driver
+26/01/10 15:34:40 INFO TaskSetManager: Finished task 1.0 in stage 4.0 (TID 5) in 1223 ms on ip-172-31-69-193.ec2.internal (executor driver) (1/2)
+26/01/10 15:34:41 INFO Executor: Finished task 0.0 in stage 4.0 (TID 4). 2905 bytes result sent to driver
+26/01/10 15:34:41 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 4) in 1262 ms on ip-172-31-69-193.ec2.internal (executor driver) (2/2)
+26/01/10 15:34:41 INFO TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool 
+26/01/10 15:34:41 INFO DAGScheduler: ShuffleMapStage 4 (parquet at NativeMethodAccessorImpl.java:0) finished in 1.307 s
+26/01/10 15:34:41 INFO DAGScheduler: looking for newly runnable stages
+26/01/10 15:34:41 INFO DAGScheduler: running: Set()
+26/01/10 15:34:41 INFO DAGScheduler: waiting: Set()
+26/01/10 15:34:41 INFO DAGScheduler: failed: Set()
+26/01/10 15:34:41 INFO ShufflePartitionsUtil: For shuffle(1), advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+26/01/10 15:34:41 INFO CodeGenerator: Code generated in 29.48933 ms
+26/01/10 15:34:41 INFO CodeGenerator: Code generated in 30.022045 ms
+26/01/10 15:34:41 INFO DAGScheduler: Registering RDD 18 (parquet at NativeMethodAccessorImpl.java:0) as input to shuffle 2
+26/01/10 15:34:41 INFO DAGScheduler: Got map stage job 4 (parquet at NativeMethodAccessorImpl.java:0) with 1 output partitions
+26/01/10 15:34:41 INFO DAGScheduler: Final stage: ShuffleMapStage 6 (parquet at NativeMethodAccessorImpl.java:0)
+26/01/10 15:34:41 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 5)
+26/01/10 15:34:41 INFO DAGScheduler: Missing parents: List()
+26/01/10 15:34:41 INFO DAGScheduler: Submitting ShuffleMapStage 6 (MapPartitionsRDD[18] at parquet at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/01/10 15:34:41 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 51.9 KiB, free 434.1 MiB)
+26/01/10 15:34:41 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 21.5 KiB, free 434.0 MiB)
+26/01/10 15:34:41 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on ip-172-31-69-193.ec2.internal:36577 (size: 21.5 KiB, free: 434.3 MiB)
+26/01/10 15:34:41 INFO SparkContext: Created broadcast 6 from broadcast at DAGScheduler.scala:1535
+26/01/10 15:34:41 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 6 (MapPartitionsRDD[18] at parquet at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+26/01/10 15:34:41 INFO TaskSchedulerImpl: Adding task set 6.0 with 1 tasks resource profile 0
+26/01/10 15:34:41 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 6) (ip-172-31-69-193.ec2.internal, executor driver, partition 0, NODE_LOCAL, 7352 bytes) 
+26/01/10 15:34:41 INFO Executor: Running task 0.0 in stage 6.0 (TID 6)
+26/01/10 15:34:41 INFO ShuffleBlockFetcherIterator: Getting 2 (710.6 KiB) non-empty blocks including 2 (710.6 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/01/10 15:34:41 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 13 ms
+26/01/10 15:34:41 INFO CodeGenerator: Code generated in 21.067898 ms
+26/01/10 15:34:41 INFO CodeGenerator: Code generated in 14.513146 ms
+26/01/10 15:34:41 INFO CodeGenerator: Code generated in 38.53571 ms
+26/01/10 15:34:41 INFO CodeGenerator: Code generated in 8.59281 ms
+26/01/10 15:34:41 INFO CodeGenerator: Code generated in 12.731508 ms
+26/01/10 15:34:41 INFO CodeGenerator: Code generated in 13.263278 ms
+26/01/10 15:34:41 INFO CodeGenerator: Code generated in 10.90937 ms
+26/01/10 15:34:42 INFO Executor: Finished task 0.0 in stage 6.0 (TID 6). 5687 bytes result sent to driver
+26/01/10 15:34:42 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 6) in 663 ms on ip-172-31-69-193.ec2.internal (executor driver) (1/1)
+26/01/10 15:34:42 INFO TaskSchedulerImpl: Removed TaskSet 6.0, whose tasks have all completed, from pool 
+26/01/10 15:34:42 INFO DAGScheduler: ShuffleMapStage 6 (parquet at NativeMethodAccessorImpl.java:0) finished in 0.698 s
+26/01/10 15:34:42 INFO DAGScheduler: looking for newly runnable stages
+26/01/10 15:34:42 INFO DAGScheduler: running: Set()
+26/01/10 15:34:42 INFO DAGScheduler: waiting: Set()
+26/01/10 15:34:42 INFO DAGScheduler: failed: Set()
+26/01/10 15:34:42 INFO ShufflePartitionsUtil: For shuffle(2), advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+26/01/10 15:34:42 INFO ParquetUtils: Using default output committer for Parquet: org.apache.parquet.hadoop.ParquetOutputCommitter
+26/01/10 15:34:42 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/01/10 15:34:42 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/01/10 15:34:42 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+26/01/10 15:34:42 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/01/10 15:34:42 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/01/10 15:34:42 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+26/01/10 15:34:42 INFO CodeGenerator: Code generated in 70.138262 ms
+26/01/10 15:34:42 INFO CodeGenerator: Code generated in 33.455118 ms
+26/01/10 15:34:42 INFO CodeGenerator: Code generated in 24.730697 ms
+26/01/10 15:34:42 INFO SparkContext: Starting job: parquet at NativeMethodAccessorImpl.java:0
+26/01/10 15:34:42 INFO DAGScheduler: Got job 5 (parquet at NativeMethodAccessorImpl.java:0) with 1 output partitions
+26/01/10 15:34:42 INFO DAGScheduler: Final stage: ResultStage 9 (parquet at NativeMethodAccessorImpl.java:0)
+26/01/10 15:34:42 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 8)
+26/01/10 15:34:42 INFO DAGScheduler: Missing parents: List()
+26/01/10 15:34:42 INFO DAGScheduler: Submitting ResultStage 9 (MapPartitionsRDD[25] at parquet at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/01/10 15:34:42 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 295.7 KiB, free 433.7 MiB)
+26/01/10 15:34:42 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 106.8 KiB, free 433.6 MiB)
+26/01/10 15:34:42 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on ip-172-31-69-193.ec2.internal:36577 (size: 106.8 KiB, free: 434.2 MiB)
+26/01/10 15:34:42 INFO SparkContext: Created broadcast 7 from broadcast at DAGScheduler.scala:1535
+26/01/10 15:34:42 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 9 (MapPartitionsRDD[25] at parquet at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+26/01/10 15:34:42 INFO TaskSchedulerImpl: Adding task set 9.0 with 1 tasks resource profile 0
+26/01/10 15:34:42 INFO TaskSetManager: Starting task 0.0 in stage 9.0 (TID 7) (ip-172-31-69-193.ec2.internal, executor driver, partition 0, NODE_LOCAL, 7363 bytes) 
+26/01/10 15:34:42 INFO Executor: Running task 0.0 in stage 9.0 (TID 7)
+26/01/10 15:34:42 INFO BlockManagerInfo: Removed broadcast_6_piece0 on ip-172-31-69-193.ec2.internal:36577 in memory (size: 21.5 KiB, free: 434.2 MiB)
+26/01/10 15:34:42 INFO ShuffleBlockFetcherIterator: Getting 1 (453.3 KiB) non-empty blocks including 1 (453.3 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/01/10 15:34:42 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
+26/01/10 15:34:42 INFO CodeGenerator: Code generated in 22.269298 ms
+26/01/10 15:34:42 INFO CodeGenerator: Code generated in 15.435776 ms
+26/01/10 15:34:42 INFO CodeGenerator: Code generated in 10.688893 ms
+26/01/10 15:34:42 INFO CodeGenerator: Code generated in 18.101761 ms
+26/01/10 15:34:42 INFO CodeGenerator: Code generated in 9.573929 ms
+26/01/10 15:34:42 INFO CodeGenerator: Code generated in 35.788416 ms
+26/01/10 15:34:42 INFO ExternalAppendOnlyUnsafeRowArray: Reached spill threshold of 4096 rows, switching to org.apache.spark.util.collection.unsafe.sort.UnsafeExternalSorter
+26/01/10 15:34:42 INFO CodeGenerator: Code generated in 10.367193 ms
+26/01/10 15:34:43 INFO CodeGenerator: Code generated in 12.023341 ms
+26/01/10 15:34:43 INFO CodeGenerator: Code generated in 8.403882 ms
+26/01/10 15:34:43 INFO CodeGenerator: Code generated in 17.96882 ms
+26/01/10 15:34:43 INFO CodeGenerator: Code generated in 13.920509 ms
+26/01/10 15:34:43 INFO CodeGenerator: Code generated in 7.221228 ms
+26/01/10 15:34:43 INFO CodeGenerator: Code generated in 12.008023 ms
+26/01/10 15:34:43 INFO CodeGenerator: Code generated in 5.999055 ms
+26/01/10 15:34:43 INFO CodeGenerator: Code generated in 28.828965 ms
+26/01/10 15:34:43 INFO CodeGenerator: Code generated in 16.292791 ms
+26/01/10 15:34:43 INFO CodeGenerator: Code generated in 8.958838 ms
+26/01/10 15:34:43 INFO CodeGenerator: Code generated in 11.735306 ms
+26/01/10 15:34:43 INFO CodeGenerator: Code generated in 12.106187 ms
+26/01/10 15:34:43 INFO CodeGenerator: Code generated in 7.213613 ms
+26/01/10 15:34:43 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/01/10 15:34:43 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/01/10 15:34:43 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+26/01/10 15:34:43 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+26/01/10 15:34:43 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+26/01/10 15:34:43 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+26/01/10 15:34:43 INFO CodeGenerator: Code generated in 26.987803 ms
+26/01/10 15:34:43 INFO ExternalAppendOnlyUnsafeRowArray: Reached spill threshold of 4096 rows, switching to org.apache.spark.util.collection.unsafe.sort.UnsafeExternalSorter
+26/01/10 15:34:43 INFO ExternalAppendOnlyUnsafeRowArray: Reached spill threshold of 4096 rows, switching to org.apache.spark.util.collection.unsafe.sort.UnsafeExternalSorter
+26/01/10 15:34:43 INFO ExternalAppendOnlyUnsafeRowArray: Reached spill threshold of 4096 rows, switching to org.apache.spark.util.collection.unsafe.sort.UnsafeExternalSorter
+26/01/10 15:34:43 INFO ExternalAppendOnlyUnsafeRowArray: Reached spill threshold of 4096 rows, switching to org.apache.spark.util.collection.unsafe.sort.UnsafeExternalSorter
+26/01/10 15:34:43 INFO ExternalAppendOnlyUnsafeRowArray: Reached spill threshold of 4096 rows, switching to org.apache.spark.util.collection.unsafe.sort.UnsafeExternalSorter
+26/01/10 15:34:43 INFO CodeGenerator: Code generated in 7.608318 ms
+26/01/10 15:34:43 INFO CodeGenerator: Code generated in 26.771318 ms
+26/01/10 15:34:43 INFO CodecConfig: Compression: SNAPPY
+26/01/10 15:34:43 INFO CodecConfig: Compression: SNAPPY
+26/01/10 15:34:43 INFO ParquetOutputFormat: ParquetRecordWriter [block size: 134217728b, row group padding size: 8388608b, validating: false]
+26/01/10 15:34:44 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "date",
+    "type" : "date",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "open",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "high",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "low",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "close",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "from_symbol",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "to_symbol",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "frequency",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "error",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "prev_date",
+    "type" : "date",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "prev_close",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "gap_days",
+    "type" : "integer",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "log_return",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "range",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "body",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "lag_ret_1",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "lag_ret_2",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "lag_ret_5",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "roll_mean_5",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "roll_mean_20",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "roll_std_5",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "roll_std_20",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "target_return_1d",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  optional int32 date (DATE);
+  optional double open;
+  optional double high;
+  optional double low;
+  optional double close;
+  optional binary from_symbol (STRING);
+  optional binary to_symbol (STRING);
+  optional binary frequency (STRING);
+  optional binary error (STRING);
+  optional int32 prev_date (DATE);
+  optional double prev_close;
+  optional int32 gap_days;
+  optional double log_return;
+  optional double range;
+  optional double body;
+  optional double lag_ret_1;
+  optional double lag_ret_2;
+  optional double lag_ret_5;
+  optional double roll_mean_5;
+  optional double roll_mean_20;
+  optional double roll_std_5;
+  optional double roll_std_20;
+  optional double target_return_1d;
+}
+
+       
+26/01/10 15:34:44 INFO CodecPool: Got brand-new compressor [.snappy]
+26/01/10 15:34:44 INFO CodecConfig: Compression: SNAPPY
+26/01/10 15:34:44 INFO CodecConfig: Compression: SNAPPY
+26/01/10 15:34:44 INFO ParquetOutputFormat: ParquetRecordWriter [block size: 134217728b, row group padding size: 8388608b, validating: false]
+26/01/10 15:34:44 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "date",
+    "type" : "date",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "open",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "high",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "low",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "close",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "from_symbol",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "to_symbol",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "frequency",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "error",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "prev_date",
+    "type" : "date",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "prev_close",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "gap_days",
+    "type" : "integer",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "log_return",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "range",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "body",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "lag_ret_1",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "lag_ret_2",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "lag_ret_5",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "roll_mean_5",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "roll_mean_20",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "roll_std_5",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "roll_std_20",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "target_return_1d",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  optional int32 date (DATE);
+  optional double open;
+  optional double high;
+  optional double low;
+  optional double close;
+  optional binary from_symbol (STRING);
+  optional binary to_symbol (STRING);
+  optional binary frequency (STRING);
+  optional binary error (STRING);
+  optional int32 prev_date (DATE);
+  optional double prev_close;
+  optional int32 gap_days;
+  optional double log_return;
+  optional double range;
+  optional double body;
+  optional double lag_ret_1;
+  optional double lag_ret_2;
+  optional double lag_ret_5;
+  optional double roll_mean_5;
+  optional double roll_mean_20;
+  optional double roll_std_5;
+  optional double roll_std_20;
+  optional double target_return_1d;
+}
+
+       
+26/01/10 15:34:44 INFO CodecConfig: Compression: SNAPPY
+26/01/10 15:34:44 INFO CodecConfig: Compression: SNAPPY
+26/01/10 15:34:44 INFO ParquetOutputFormat: ParquetRecordWriter [block size: 134217728b, row group padding size: 8388608b, validating: false]
+26/01/10 15:34:44 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "date",
+    "type" : "date",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "open",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "high",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "low",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "close",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "from_symbol",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "to_symbol",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "frequency",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "error",
+    "type" : "string",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "prev_date",
+    "type" : "date",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "prev_close",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "gap_days",
+    "type" : "integer",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "log_return",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "range",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "body",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "lag_ret_1",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "lag_ret_2",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "lag_ret_5",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "roll_mean_5",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "roll_mean_20",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "roll_std_5",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "roll_std_20",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "target_return_1d",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  optional int32 date (DATE);
+  optional double open;
+  optional double high;
+  optional double low;
+  optional double close;
+  optional binary from_symbol (STRING);
+  optional binary to_symbol (STRING);
+  optional binary frequency (STRING);
+  optional binary error (STRING);
+  optional int32 prev_date (DATE);
+  optional double prev_close;
+  optional int32 gap_days;
+  optional double log_return;
+  optional double range;
+  optional double body;
+  optional double lag_ret_1;
+  optional double lag_ret_2;
+  optional double lag_ret_5;
+  optional double roll_mean_5;
+  optional double roll_mean_20;
+  optional double roll_std_5;
+  optional double roll_std_20;
+  optional double target_return_1d;
+}
+
+       
+26/01/10 15:34:45 INFO FileOutputCommitter: Saved output of task 'attempt_202601101534425080556182727577937_0009_m_000000_7' to file:/home/ec2-user/ADZD-project/data/features/forex_daily/frequency=daily/.spark-staging-b5d5a291-3874-42b9-a8e5-870071a1aaed/_temporary/0/task_202601101534425080556182727577937_0009_m_000000
+26/01/10 15:34:45 INFO SparkHadoopMapRedUtil: attempt_202601101534425080556182727577937_0009_m_000000_7: Committed. Elapsed time: 1 ms.
+26/01/10 15:34:45 INFO Executor: Finished task 0.0 in stage 9.0 (TID 7). 7410 bytes result sent to driver
+26/01/10 15:34:45 INFO TaskSetManager: Finished task 0.0 in stage 9.0 (TID 7) in 2405 ms on ip-172-31-69-193.ec2.internal (executor driver) (1/1)
+26/01/10 15:34:45 INFO DAGScheduler: ResultStage 9 (parquet at NativeMethodAccessorImpl.java:0) finished in 2.482 s
+26/01/10 15:34:45 INFO DAGScheduler: Job 5 is finished. Cancelling potential speculative or zombie tasks for this job
+26/01/10 15:34:45 INFO TaskSchedulerImpl: Removed TaskSet 9.0, whose tasks have all completed, from pool 
+26/01/10 15:34:45 INFO TaskSchedulerImpl: Killing all running tasks in stage 9: Stage finished
+26/01/10 15:34:45 INFO DAGScheduler: Job 5 finished: parquet at NativeMethodAccessorImpl.java:0, took 2.496970 s
+26/01/10 15:34:45 INFO FileFormatWriter: Start to commit write Job 7fbce6fe-c0f6-457c-b424-186294ef24e0.
+26/01/10 15:34:45 INFO FileFormatWriter: Write Job 7fbce6fe-c0f6-457c-b424-186294ef24e0 committed. Elapsed time: 61 ms.
+26/01/10 15:34:45 INFO FileFormatWriter: Finished processing stats for write job 7fbce6fe-c0f6-457c-b424-186294ef24e0.
+26/01/10 15:34:45 INFO DataSourceStrategy: Pruning directories with: isnotnull(ingest_date#10),(ingest_date#10 = 2026-01-10)
+26/01/10 15:34:45 INFO FileSourceStrategy: Pushed Filters: 
+26/01/10 15:34:45 INFO FileSourceStrategy: Post-Scan Filters: 
+26/01/10 15:34:45 INFO CodeGenerator: Code generated in 74.271921 ms
+26/01/10 15:34:45 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 203.0 KiB, free 433.5 MiB)
+26/01/10 15:34:45 INFO BlockManagerInfo: Removed broadcast_7_piece0 on ip-172-31-69-193.ec2.internal:36577 in memory (size: 106.8 KiB, free: 434.3 MiB)
+26/01/10 15:34:45 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 35.4 KiB, free 433.5 MiB)
+26/01/10 15:34:45 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on ip-172-31-69-193.ec2.internal:36577 (size: 35.4 KiB, free: 434.3 MiB)
+26/01/10 15:34:45 INFO SparkContext: Created broadcast 8 from collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177
+26/01/10 15:34:45 INFO InMemoryFileIndex: Selected 3 partitions out of 3, pruned 0.0% partitions.
+26/01/10 15:34:45 INFO FileSourceScanExec: Planning scan with bin packing, max size: 6498810 bytes, open cost is considered as scanning 4194304 bytes.
+26/01/10 15:34:45 INFO DAGScheduler: Registering RDD 29 (collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177) as input to shuffle 3
+26/01/10 15:34:45 INFO DAGScheduler: Got map stage job 6 (collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177) with 2 output partitions
+26/01/10 15:34:45 INFO DAGScheduler: Final stage: ShuffleMapStage 10 (collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177)
+26/01/10 15:34:45 INFO DAGScheduler: Parents of final stage: List()
+26/01/10 15:34:45 INFO DAGScheduler: Missing parents: List()
+26/01/10 15:34:45 INFO DAGScheduler: Submitting ShuffleMapStage 10 (MapPartitionsRDD[29] at collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177), which has no missing parents
+26/01/10 15:34:45 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 53.3 KiB, free 433.8 MiB)
+26/01/10 15:34:45 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 21.5 KiB, free 433.8 MiB)
+26/01/10 15:34:45 INFO BlockManagerInfo: Added broadcast_9_piece0 in memory on ip-172-31-69-193.ec2.internal:36577 (size: 21.5 KiB, free: 434.3 MiB)
+26/01/10 15:34:45 INFO SparkContext: Created broadcast 9 from broadcast at DAGScheduler.scala:1535
+26/01/10 15:34:45 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 10 (MapPartitionsRDD[29] at collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177) (first 15 tasks are for partitions Vector(0, 1))
+26/01/10 15:34:45 INFO TaskSchedulerImpl: Adding task set 10.0 with 2 tasks resource profile 0
+26/01/10 15:34:45 INFO TaskSetManager: Starting task 0.0 in stage 10.0 (TID 8) (ip-172-31-69-193.ec2.internal, executor driver, partition 0, PROCESS_LOCAL, 8423 bytes) 
+26/01/10 15:34:45 INFO TaskSetManager: Starting task 1.0 in stage 10.0 (TID 9) (ip-172-31-69-193.ec2.internal, executor driver, partition 1, PROCESS_LOCAL, 8140 bytes) 
+26/01/10 15:34:45 INFO Executor: Running task 0.0 in stage 10.0 (TID 8)
+26/01/10 15:34:45 INFO Executor: Running task 1.0 in stage 10.0 (TID 9)
+26/01/10 15:34:45 INFO CodeGenerator: Code generated in 16.084809 ms
+26/01/10 15:34:45 INFO CodeGenerator: Code generated in 41.374629 ms
+26/01/10 15:34:45 INFO FileScanRDD: Reading File path: file:///home/ec2-user/ADZD-project/data/raw/alpha_vantage/market=forex/frequency=daily/pair=GBP_USD/ingest_date=2026-01-10/part-00000-3cf06f94-ff0e-4dd0-8626-97bc6eb6c2b2.c000.snappy.parquet, range: 0-150753, partition values: [GBP_USD,20463]
+26/01/10 15:34:45 INFO FileScanRDD: Reading File path: file:///home/ec2-user/ADZD-project/data/raw/alpha_vantage/market=forex/frequency=daily/pair=USD_JPY/ingest_date=2026-01-10/part-00000-3cf06f94-ff0e-4dd0-8626-97bc6eb6c2b2.c000.snappy.parquet, range: 0-114164, partition values: [USD_JPY,20463]
+26/01/10 15:34:45 INFO FileScanRDD: Reading File path: file:///home/ec2-user/ADZD-project/data/raw/alpha_vantage/market=forex/frequency=daily/pair=EUR_USD/ingest_date=2026-01-10/part-00000-3cf06f94-ff0e-4dd0-8626-97bc6eb6c2b2.c000.snappy.parquet, range: 0-149791, partition values: [EUR_USD,20463]
+26/01/10 15:34:45 INFO Executor: Finished task 1.0 in stage 10.0 (TID 9). 3098 bytes result sent to driver
+26/01/10 15:34:45 INFO TaskSetManager: Finished task 1.0 in stage 10.0 (TID 9) in 270 ms on ip-172-31-69-193.ec2.internal (executor driver) (1/2)
+26/01/10 15:34:45 INFO Executor: Finished task 0.0 in stage 10.0 (TID 8). 3141 bytes result sent to driver
+26/01/10 15:34:45 INFO TaskSetManager: Finished task 0.0 in stage 10.0 (TID 8) in 340 ms on ip-172-31-69-193.ec2.internal (executor driver) (2/2)
+26/01/10 15:34:45 INFO TaskSchedulerImpl: Removed TaskSet 10.0, whose tasks have all completed, from pool 
+26/01/10 15:34:45 INFO DAGScheduler: ShuffleMapStage 10 (collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177) finished in 0.391 s
+26/01/10 15:34:45 INFO DAGScheduler: looking for newly runnable stages
+26/01/10 15:34:45 INFO DAGScheduler: running: Set()
+26/01/10 15:34:45 INFO DAGScheduler: waiting: Set()
+26/01/10 15:34:45 INFO DAGScheduler: failed: Set()
+26/01/10 15:34:46 INFO ShufflePartitionsUtil: For shuffle(3), advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+26/01/10 15:34:46 INFO HashAggregateExec: spark.sql.codegen.aggregate.map.twolevel.enabled is set to true, but current version of codegened fast hashmap does not support this aggregate.
+26/01/10 15:34:46 INFO CodeGenerator: Code generated in 25.633848 ms
+26/01/10 15:34:46 INFO DAGScheduler: Registering RDD 32 (collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177) as input to shuffle 4
+26/01/10 15:34:46 INFO DAGScheduler: Got map stage job 7 (collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177) with 1 output partitions
+26/01/10 15:34:46 INFO DAGScheduler: Final stage: ShuffleMapStage 12 (collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177)
+26/01/10 15:34:46 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 11)
+26/01/10 15:34:46 INFO DAGScheduler: Missing parents: List()
+26/01/10 15:34:46 INFO DAGScheduler: Submitting ShuffleMapStage 12 (MapPartitionsRDD[32] at collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177), which has no missing parents
+26/01/10 15:34:46 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 59.6 KiB, free 433.7 MiB)
+26/01/10 15:34:46 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 24.4 KiB, free 433.7 MiB)
+26/01/10 15:34:46 INFO BlockManagerInfo: Added broadcast_10_piece0 in memory on ip-172-31-69-193.ec2.internal:36577 (size: 24.4 KiB, free: 434.3 MiB)
+26/01/10 15:34:46 INFO SparkContext: Created broadcast 10 from broadcast at DAGScheduler.scala:1535
+26/01/10 15:34:46 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 12 (MapPartitionsRDD[32] at collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177) (first 15 tasks are for partitions Vector(0))
+26/01/10 15:34:46 INFO TaskSchedulerImpl: Adding task set 12.0 with 1 tasks resource profile 0
+26/01/10 15:34:46 INFO TaskSetManager: Starting task 0.0 in stage 12.0 (TID 10) (ip-172-31-69-193.ec2.internal, executor driver, partition 0, NODE_LOCAL, 7352 bytes) 
+26/01/10 15:34:46 INFO Executor: Running task 0.0 in stage 12.0 (TID 10)
+26/01/10 15:34:46 INFO ShuffleBlockFetcherIterator: Getting 2 (687.9 KiB) non-empty blocks including 2 (687.9 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/01/10 15:34:46 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 5 ms
+26/01/10 15:34:46 INFO CodeGenerator: Code generated in 11.949028 ms
+26/01/10 15:34:46 INFO Executor: Finished task 0.0 in stage 12.0 (TID 10). 5936 bytes result sent to driver
+26/01/10 15:34:46 INFO TaskSetManager: Finished task 0.0 in stage 12.0 (TID 10) in 212 ms on ip-172-31-69-193.ec2.internal (executor driver) (1/1)
+26/01/10 15:34:46 INFO TaskSchedulerImpl: Removed TaskSet 12.0, whose tasks have all completed, from pool 
+26/01/10 15:34:46 INFO DAGScheduler: ShuffleMapStage 12 (collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177) finished in 0.227 s
+26/01/10 15:34:46 INFO DAGScheduler: looking for newly runnable stages
+26/01/10 15:34:46 INFO DAGScheduler: running: Set()
+26/01/10 15:34:46 INFO DAGScheduler: waiting: Set()
+26/01/10 15:34:46 INFO DAGScheduler: failed: Set()
+26/01/10 15:34:46 INFO BlockManagerInfo: Removed broadcast_9_piece0 on ip-172-31-69-193.ec2.internal:36577 in memory (size: 21.5 KiB, free: 434.3 MiB)
+26/01/10 15:34:46 INFO ShufflePartitionsUtil: For shuffle(4), advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+26/01/10 15:34:46 INFO CodeGenerator: Code generated in 28.539184 ms
+26/01/10 15:34:46 INFO CodeGenerator: Code generated in 7.517586 ms
+26/01/10 15:34:46 INFO CodeGenerator: Code generated in 10.085148 ms
+26/01/10 15:34:46 INFO DAGScheduler: Registering RDD 39 (collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177) as input to shuffle 5
+26/01/10 15:34:46 INFO DAGScheduler: Got map stage job 8 (collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177) with 1 output partitions
+26/01/10 15:34:46 INFO DAGScheduler: Final stage: ShuffleMapStage 15 (collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177)
+26/01/10 15:34:46 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 14)
+26/01/10 15:34:46 INFO DAGScheduler: Missing parents: List()
+26/01/10 15:34:46 INFO DAGScheduler: Submitting ShuffleMapStage 15 (MapPartitionsRDD[39] at collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177), which has no missing parents
+26/01/10 15:34:46 INFO MemoryStore: Block broadcast_11 stored as values in memory (estimated size 74.7 KiB, free 433.7 MiB)
+26/01/10 15:34:46 INFO MemoryStore: Block broadcast_11_piece0 stored as bytes in memory (estimated size 30.8 KiB, free 433.7 MiB)
+26/01/10 15:34:46 INFO BlockManagerInfo: Added broadcast_11_piece0 in memory on ip-172-31-69-193.ec2.internal:36577 (size: 30.8 KiB, free: 434.3 MiB)
+26/01/10 15:34:46 INFO SparkContext: Created broadcast 11 from broadcast at DAGScheduler.scala:1535
+26/01/10 15:34:46 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 15 (MapPartitionsRDD[39] at collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177) (first 15 tasks are for partitions Vector(0))
+26/01/10 15:34:46 INFO TaskSchedulerImpl: Adding task set 15.0 with 1 tasks resource profile 0
+26/01/10 15:34:46 INFO TaskSetManager: Starting task 0.0 in stage 15.0 (TID 11) (ip-172-31-69-193.ec2.internal, executor driver, partition 0, NODE_LOCAL, 7352 bytes) 
+26/01/10 15:34:46 INFO Executor: Running task 0.0 in stage 15.0 (TID 11)
+26/01/10 15:34:46 INFO ShuffleBlockFetcherIterator: Getting 1 (197.9 KiB) non-empty blocks including 1 (197.9 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/01/10 15:34:46 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 3 ms
+26/01/10 15:34:46 INFO CodeGenerator: Code generated in 7.827671 ms
+26/01/10 15:34:46 INFO CodeGenerator: Code generated in 7.371627 ms
+26/01/10 15:34:46 INFO CodeGenerator: Code generated in 10.753159 ms
+26/01/10 15:34:46 INFO CodeGenerator: Code generated in 7.354176 ms
+26/01/10 15:34:46 INFO CodeGenerator: Code generated in 6.614022 ms
+26/01/10 15:34:46 INFO CodeGenerator: Code generated in 11.042556 ms
+26/01/10 15:34:46 INFO CodeGenerator: Code generated in 6.478807 ms
+26/01/10 15:34:46 INFO ExternalAppendOnlyUnsafeRowArray: Reached spill threshold of 4096 rows, switching to org.apache.spark.util.collection.unsafe.sort.UnsafeExternalSorter
+26/01/10 15:34:46 INFO CodeGenerator: Code generated in 11.633897 ms
+26/01/10 15:34:46 INFO CodeGenerator: Code generated in 4.526139 ms
+26/01/10 15:34:46 INFO CodeGenerator: Code generated in 16.107128 ms
+26/01/10 15:34:46 INFO CodeGenerator: Code generated in 6.191413 ms
+26/01/10 15:34:46 INFO CodeGenerator: Code generated in 25.692198 ms
+26/01/10 15:34:46 INFO CodeGenerator: Code generated in 5.471619 ms
+26/01/10 15:34:46 INFO ExternalAppendOnlyUnsafeRowArray: Reached spill threshold of 4096 rows, switching to org.apache.spark.util.collection.unsafe.sort.UnsafeExternalSorter
+26/01/10 15:34:46 INFO ExternalAppendOnlyUnsafeRowArray: Reached spill threshold of 4096 rows, switching to org.apache.spark.util.collection.unsafe.sort.UnsafeExternalSorter
+26/01/10 15:34:47 INFO ExternalAppendOnlyUnsafeRowArray: Reached spill threshold of 4096 rows, switching to org.apache.spark.util.collection.unsafe.sort.UnsafeExternalSorter
+26/01/10 15:34:47 INFO ExternalAppendOnlyUnsafeRowArray: Reached spill threshold of 4096 rows, switching to org.apache.spark.util.collection.unsafe.sort.UnsafeExternalSorter
+26/01/10 15:34:47 INFO ExternalAppendOnlyUnsafeRowArray: Reached spill threshold of 4096 rows, switching to org.apache.spark.util.collection.unsafe.sort.UnsafeExternalSorter
+26/01/10 15:34:47 INFO Executor: Finished task 0.0 in stage 15.0 (TID 11). 7508 bytes result sent to driver
+26/01/10 15:34:47 INFO TaskSetManager: Finished task 0.0 in stage 15.0 (TID 11) in 779 ms on ip-172-31-69-193.ec2.internal (executor driver) (1/1)
+26/01/10 15:34:47 INFO TaskSchedulerImpl: Removed TaskSet 15.0, whose tasks have all completed, from pool 
+26/01/10 15:34:47 INFO DAGScheduler: ShuffleMapStage 15 (collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177) finished in 0.811 s
+26/01/10 15:34:47 INFO DAGScheduler: looking for newly runnable stages
+26/01/10 15:34:47 INFO DAGScheduler: running: Set()
+26/01/10 15:34:47 INFO DAGScheduler: waiting: Set()
+26/01/10 15:34:47 INFO DAGScheduler: failed: Set()
+26/01/10 15:34:47 INFO CodeGenerator: Code generated in 8.558258 ms
+26/01/10 15:34:47 INFO SparkContext: Starting job: collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177
+26/01/10 15:34:47 INFO DAGScheduler: Got job 9 (collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177) with 1 output partitions
+26/01/10 15:34:47 INFO DAGScheduler: Final stage: ResultStage 19 (collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177)
+26/01/10 15:34:47 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 18)
+26/01/10 15:34:47 INFO DAGScheduler: Missing parents: List()
+26/01/10 15:34:47 INFO DAGScheduler: Submitting ResultStage 19 (MapPartitionsRDD[42] at collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177), which has no missing parents
+26/01/10 15:34:47 INFO MemoryStore: Block broadcast_12 stored as values in memory (estimated size 12.2 KiB, free 433.7 MiB)
+26/01/10 15:34:47 INFO MemoryStore: Block broadcast_12_piece0 stored as bytes in memory (estimated size 5.8 KiB, free 433.7 MiB)
+26/01/10 15:34:47 INFO BlockManagerInfo: Added broadcast_12_piece0 in memory on ip-172-31-69-193.ec2.internal:36577 (size: 5.8 KiB, free: 434.3 MiB)
+26/01/10 15:34:47 INFO SparkContext: Created broadcast 12 from broadcast at DAGScheduler.scala:1535
+26/01/10 15:34:47 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 19 (MapPartitionsRDD[42] at collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177) (first 15 tasks are for partitions Vector(0))
+26/01/10 15:34:47 INFO TaskSchedulerImpl: Adding task set 19.0 with 1 tasks resource profile 0
+26/01/10 15:34:47 INFO TaskSetManager: Starting task 0.0 in stage 19.0 (TID 12) (ip-172-31-69-193.ec2.internal, executor driver, partition 0, NODE_LOCAL, 7363 bytes) 
+26/01/10 15:34:47 INFO Executor: Running task 0.0 in stage 19.0 (TID 12)
+26/01/10 15:34:47 INFO ShuffleBlockFetcherIterator: Getting 1 (60.0 B) non-empty blocks including 1 (60.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+26/01/10 15:34:47 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+26/01/10 15:34:47 INFO Executor: Finished task 0.0 in stage 19.0 (TID 12). 3808 bytes result sent to driver
+26/01/10 15:34:47 INFO TaskSetManager: Finished task 0.0 in stage 19.0 (TID 12) in 16 ms on ip-172-31-69-193.ec2.internal (executor driver) (1/1)
+26/01/10 15:34:47 INFO TaskSchedulerImpl: Removed TaskSet 19.0, whose tasks have all completed, from pool 
+26/01/10 15:34:47 INFO DAGScheduler: ResultStage 19 (collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177) finished in 0.037 s
+26/01/10 15:34:47 INFO DAGScheduler: Job 9 is finished. Cancelling potential speculative or zombie tasks for this job
+26/01/10 15:34:47 INFO TaskSchedulerImpl: Killing all running tasks in stage 19: Stage finished
+26/01/10 15:34:47 INFO DAGScheduler: Job 9 finished: collect at /home/ec2-user/ADZD-project/spark_jobs/preprocess/forex_daily_preprocess.py:177, took 0.044014 s
+2026-01-10 15:34:47,507 | INFO | spark.preprocess.forex_daily | Preprocessing done. ingest_date=2026-01-10, records=14976
+26/01/10 15:34:47 INFO SparkContext: SparkContext is stopping with exitCode 0.
+26/01/10 15:34:47 INFO SparkUI: Stopped Spark web UI at http://ip-172-31-69-193.ec2.internal:4040
+26/01/10 15:34:47 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+26/01/10 15:34:47 INFO MemoryStore: MemoryStore cleared
+26/01/10 15:34:47 INFO BlockManager: BlockManager stopped
+26/01/10 15:34:47 INFO BlockManagerMaster: BlockManagerMaster stopped
+26/01/10 15:34:47 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+26/01/10 15:34:47 INFO SparkContext: Successfully stopped SparkContext
+26/01/10 15:34:48 INFO ShutdownHookManager: Shutdown hook called
+26/01/10 15:34:48 INFO ShutdownHookManager: Deleting directory /tmp/spark-a8bddb31-f025-4d0d-a266-1929b6ce7b78
+26/01/10 15:34:48 INFO ShutdownHookManager: Deleting directory /tmp/spark-728bda28-3bfe-4893-9bc7-ca75dbb55b3d
+26/01/10 15:34:48 INFO ShutdownHookManager: Deleting directory /tmp/spark-728bda28-3bfe-4893-9bc7-ca75dbb55b3d/pyspark-a12a1158-a250-45b3-af5f-31305ab8c316
+2026-01-10 15:34:48,639 | INFO | naive.backtest | NAIVE backtest ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=30, min_train_size=60
+2026-01-10 15:34:48,727 | INFO | naive.backtest | Computed metrics for pairs: 3
+2026-01-10 15:34:48,727 | INFO | naive.backtest | Done.
+2026-01-10 15:34:49,750 | INFO | sarima.backtest | SARIMA backtest ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=30, min_train_size=60, order=(1, 0, 1), seasonal_order=(0, 0, 0, 0)
+/home/ec2-user/ADZD-project/.venv/lib64/python3.9/site-packages/statsmodels/tsa/statespace/sarimax.py:966: UserWarning: Non-stationary starting autoregressive parameters found. Using zeros as starting parameters.
+  warn('Non-stationary starting autoregressive parameters'
+/home/ec2-user/ADZD-project/.venv/lib64/python3.9/site-packages/statsmodels/tsa/statespace/sarimax.py:978: UserWarning: Non-invertible starting MA parameters found. Using zeros as starting parameters.
+  warn('Non-invertible starting MA parameters found.'
+2026-01-10 15:34:51,343 | INFO | sarima.backtest | Computed metrics for pairs: 3
+2026-01-10 15:34:51,344 | INFO | sarima.backtest | Done.
+Importing plotly failed. Interactive plots will not work.
+2026-01-10 15:34:52,408 | INFO | prophet.backtest | Prophet backtest ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], test_size=30, min_train_size=60
+15:34:52 - cmdstanpy - INFO - Chain [1] start processing
+15:34:52 - cmdstanpy - INFO - Chain [1] done processing
+15:34:52 - cmdstanpy - INFO - Chain [1] start processing
+15:34:53 - cmdstanpy - INFO - Chain [1] done processing
+15:34:53 - cmdstanpy - INFO - Chain [1] start processing
+15:34:53 - cmdstanpy - INFO - Chain [1] done processing
+2026-01-10 15:34:53,625 | INFO | prophet.backtest | Computed metrics for pairs: 3
+2026-01-10 15:34:53,625 | INFO | prophet.backtest | Done.
+2026-01-10 15:34:54,309 | INFO | compare.select_model | Selecting best model for pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'] ingest_date=2026-01-10 metric=mae models=['naive', 'sarima', 'prophet']
+2026-01-10 15:34:54,334 | WARNING | compare.select_model | No candidates for pair=EUR_USD (missing metrics?)
+2026-01-10 15:34:54,335 | WARNING | compare.select_model | No candidates for pair=GBP_USD (missing metrics?)
+2026-01-10 15:34:54,336 | WARNING | compare.select_model | No candidates for pair=USD_JPY (missing metrics?)
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib64/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/ec2-user/ADZD-project/pipelines/compare/select_model.py", line 131, in <module>
+    main()
+  File "/home/ec2-user/ADZD-project/pipelines/compare/select_model.py", line 114, in main
+    raise RuntimeError("No model selections computed.")
+RuntimeError: No model selections computed.
+2026-01-10 15:34:54,900 | INFO | naive.predict | NAIVE predict ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], horizon=14
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib64/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/ec2-user/ADZD-project/pipelines/naive/predict.py", line 103, in <module>
+    main()
+  File "/home/ec2-user/ADZD-project/pipelines/naive/predict.py", line 52, in main
+    if "close" not in df_feat.columns:
+AttributeError: 'str' object has no attribute 'columns'
+2026-01-10 15:34:55,892 | INFO | sarima.predict | SARIMA predict ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], horizon=14, order=(1, 0, 1), seasonal_order=(0, 0, 0, 0)
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib64/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/ec2-user/ADZD-project/pipelines/sarima/predict.py", line 126, in <module>
+    main()
+  File "/home/ec2-user/ADZD-project/pipelines/sarima/predict.py", line 55, in main
+    if df_feat is None or len(df_feat) == 0 or "close" not in df_feat.columns:
+AttributeError: 'str' object has no attribute 'columns'
+Importing plotly failed. Interactive plots will not work.
+2026-01-10 15:34:56,990 | INFO | prophet.predict | Prophet predict ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], horizon=14
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib64/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/ec2-user/ADZD-project/pipelines/prophet/predict.py", line 116, in <module>
+    main()
+  File "/home/ec2-user/ADZD-project/pipelines/prophet/predict.py", line 49, in main
+    if df_feat is None or len(df_feat) == 0 or "close" not in df_feat.columns:
+AttributeError: 'str' object has no attribute 'columns'
+2026-01-10 15:34:58,095 | INFO | visualize.forecast_vs_actual | Visualization ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], models=['naive', 'sarima', 'prophet']
+Traceback (most recent call last):
+  File "/home/ec2-user/ADZD-project/.venv/lib64/python3.9/site-packages/pandas/core/indexes/base.py", line 3791, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'pred_close_mean'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib64/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/ec2-user/ADZD-project/pipelines/visualize/forecast_vs_actual.py", line 148, in <module>
+    main()
+  File "/home/ec2-user/ADZD-project/pipelines/visualize/forecast_vs_actual.py", line 98, in main
+    y = pred["pred_close_mean"].astype(float)
+  File "/home/ec2-user/ADZD-project/.venv/lib64/python3.9/site-packages/pandas/core/frame.py", line 3893, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/ec2-user/ADZD-project/.venv/lib64/python3.9/site-packages/pandas/core/indexes/base.py", line 3798, in get_loc
+    raise KeyError(key) from err
+KeyError: 'pred_close_mean'

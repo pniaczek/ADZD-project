@@ -1,0 +1,4 @@
+2025-12-18 00:16:42,967 | INFO | sarima.predict | SARIMA forecast saved to data/predictions/sarima/pair=EUR_USD/run_date=2025-12-18T00:16:42.960955+00:00/forecast.parquet
+2025-12-18 00:16:42,967 | INFO | sarima.predict | Forecast horizon: 14 days
+2025-12-18 00:20:05,001 | INFO | sarima.predict | SARIMA forecast saved to data/predictions/sarima/pair=EUR_USD/run_date=2025-12-18T00:20:04.999811+00:00/forecast.parquet
+2025-12-18 00:20:05,002 | INFO | sarima.predict | Forecast horizon: 14 days

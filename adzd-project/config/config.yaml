@@ -1,0 +1,56 @@
+project:
+  name: alpha-vantage-spark
+  environment: local        # local | aws
+  timezone: US/Eastern
+
+paths:
+  raw: data/raw
+  processed: data/processed
+  features: data/features
+  models: data/models
+  spark_logs: logs/spark-events
+  backtest_preds: data/backtest_preds
+  metrics: data/metrics
+  predictions: data/predictions
+
+alpha_vantage:
+  api_key: "..."
+  function: "FX_DAILY"
+  output_size: full
+  max_parallel_pairs: 1
+  min_seconds_between_requests: 1.1
+  max_retries: 5
+  pairs:
+    - ["EUR", "USD"]
+    - ["GBP", "USD"]
+    - ["USD", "JPY"]
+
+pipeline:
+  ingest: true
+  preprocess: ohlc_intraday
+  model: sarima
+
+models:
+  backtest:
+    daily:
+      test_size: 30
+      min_train_size: 60
+
+  predict:
+    daily:
+      horizon_days: 14
+
+  sarima:
+    daily:
+      order: [1, 0, 1]
+      seasonal_order: [0, 0, 0, 0]
+      enforce_stationarity: true
+      enforce_invertibility: true
+
+  prophet:
+    daily:
+      yearly_seasonality: false
+      weekly_seasonality: true
+      daily_seasonality: false
+      seasonality_mode: additive
+      changepoint_prior_scale: 0.05

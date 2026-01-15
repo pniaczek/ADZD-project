@@ -1,0 +1,101 @@
+2026-01-10 15:16:47,019 | INFO | compare.select_model | Selecting best model per pair. ingest_date=2026-01-10, pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'], models=['naive', 'sarima', 'prophet'], metric=mae
+2026-01-10 15:16:47,049 | INFO | compare.select_model | [SELECTED] pair=EUR_USD model=SARIMA mae=0.00153293
+2026-01-10 15:16:47,057 | INFO | compare.select_model | [SELECTED] pair=GBP_USD model=SARIMA mae=0.00236917
+2026-01-10 15:16:47,065 | INFO | compare.select_model | [SELECTED] pair=USD_JPY model=PROPHET mae=0.00327929
+2026-01-10 15:16:47,065 | INFO | compare.select_model | Model selection completed.
+2026-01-10 15:16:47,066 | INFO | compare.select_model | {
+  "ingest_date": "2026-01-10",
+  "frequency": "daily",
+  "metric": "mae",
+  "selected_at": "2026-01-10T15:16:47.019479+00:00",
+  "pairs": {
+    "EUR_USD": {
+      "pair": "EUR_USD",
+      "selected_model": "SARIMA",
+      "metric": "mae",
+      "metric_value": 0.0015329298227795217,
+      "ingest_date": "2026-01-10",
+      "frequency": "daily",
+      "model_path": "models/sarima/EUR_USD/latest",
+      "selected_at": "2026-01-10T15:16:47.019479+00:00",
+      "candidates_considered": [
+        "naive",
+        "prophet",
+        "sarima"
+      ]
+    },
+    "GBP_USD": {
+      "pair": "GBP_USD",
+      "selected_model": "SARIMA",
+      "metric": "mae",
+      "metric_value": 0.0023691679983597917,
+      "ingest_date": "2026-01-10",
+      "frequency": "daily",
+      "model_path": null,
+      "selected_at": "2026-01-10T15:16:47.019479+00:00",
+      "candidates_considered": [
+        "naive",
+        "prophet",
+        "sarima"
+      ]
+    },
+    "USD_JPY": {
+      "pair": "USD_JPY",
+      "selected_model": "PROPHET",
+      "metric": "mae",
+      "metric_value": 0.0032792915711087403,
+      "ingest_date": "2026-01-10",
+      "frequency": "daily",
+      "model_path": null,
+      "selected_at": "2026-01-10T15:16:47.019479+00:00",
+      "candidates_considered": [
+        "naive",
+        "prophet",
+        "sarima"
+      ]
+    }
+  },
+  "skipped": []
+}
+2026-01-10 15:34:54,309 | INFO | compare.select_model | Selecting best model for pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'] ingest_date=2026-01-10 metric=mae models=['naive', 'sarima', 'prophet']
+2026-01-10 15:34:54,334 | WARNING | compare.select_model | No candidates for pair=EUR_USD (missing metrics?)
+2026-01-10 15:34:54,335 | WARNING | compare.select_model | No candidates for pair=GBP_USD (missing metrics?)
+2026-01-10 15:34:54,336 | WARNING | compare.select_model | No candidates for pair=USD_JPY (missing metrics?)
+2026-01-10 15:37:44,994 | INFO | compare.select_model | Selecting best model for pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'] ingest_date=2026-01-10 metric=mae models=['naive', 'sarima', 'prophet']
+2026-01-10 15:37:45,016 | WARNING | compare.select_model | No candidates for pair=EUR_USD (missing metrics?)
+2026-01-10 15:37:45,017 | WARNING | compare.select_model | No candidates for pair=GBP_USD (missing metrics?)
+2026-01-10 15:37:45,019 | WARNING | compare.select_model | No candidates for pair=USD_JPY (missing metrics?)
+2026-01-10 15:50:07,503 | INFO | compare.select_model | Selecting best model for pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'] ingest_date=2026-01-10 metric=mae models=['naive', 'sarima', 'prophet']
+2026-01-10 15:50:07,526 | WARNING | compare.select_model | No candidates for pair=EUR_USD (missing metrics?)
+2026-01-10 15:50:07,527 | WARNING | compare.select_model | No candidates for pair=GBP_USD (missing metrics?)
+2026-01-10 15:50:07,528 | WARNING | compare.select_model | No candidates for pair=USD_JPY (missing metrics?)
+2026-01-10 15:55:17,685 | INFO | compare.select_model | Selecting best model for pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'] ingest_date=2026-01-10 metric=mae models=['naive', 'sarima', 'prophet']
+2026-01-10 15:55:17,715 | INFO | compare.select_model | Selected for EUR_USD: sarima mae=0.001533
+2026-01-10 15:55:17,723 | INFO | compare.select_model | Selected for GBP_USD: sarima mae=0.002369
+2026-01-10 15:55:17,730 | INFO | compare.select_model | Selected for USD_JPY: prophet mae=0.003279
+2026-01-10 15:55:17,730 | INFO | compare.select_model | Model selection completed. Saved: data/models/active_models/forex_daily/frequency=daily/selections_ingest_date=2026-01-10.json
+2026-01-10 15:57:08,056 | INFO | compare.select_model | Selecting best model for pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'] ingest_date=2026-01-10 metric=mae models=['naive', 'sarima', 'prophet']
+2026-01-10 15:57:08,085 | INFO | compare.select_model | Selected for EUR_USD: sarima mae=0.001533
+2026-01-10 15:57:08,092 | INFO | compare.select_model | Selected for GBP_USD: sarima mae=0.002369
+2026-01-10 15:57:08,098 | INFO | compare.select_model | Selected for USD_JPY: prophet mae=0.003279
+2026-01-10 15:57:08,098 | INFO | compare.select_model | Model selection completed. Saved: data/models/active_models/forex_daily/frequency=daily/selections_ingest_date=2026-01-10.json
+2026-01-10 16:11:01,414 | INFO | compare.select_model | Selecting best model for pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'] ingest_date=2026-01-10 metric=mae models=['naive', 'sarima', 'prophet']
+2026-01-10 16:11:01,462 | INFO | compare.select_model | Selected for EUR_USD: sarima mae=0.001533
+2026-01-10 16:11:01,486 | INFO | compare.select_model | Selected for GBP_USD: sarima mae=0.002369
+2026-01-10 16:11:01,505 | INFO | compare.select_model | Selected for USD_JPY: prophet mae=0.003279
+2026-01-10 16:11:01,505 | INFO | compare.select_model | Model selection completed. Saved: data/models/active_models/forex_daily/frequency=daily/selections_ingest_date=2026-01-10.json
+2026-01-10 16:14:02,834 | INFO | compare.select_model | Selecting best model for pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'] ingest_date=2026-01-10 metric=mae models=['naive', 'sarima', 'prophet']
+2026-01-10 16:14:02,869 | INFO | compare.select_model | Selected for EUR_USD: sarima mae=0.001533
+2026-01-10 16:14:02,877 | INFO | compare.select_model | Selected for GBP_USD: sarima mae=0.002369
+2026-01-10 16:14:02,884 | INFO | compare.select_model | Selected for USD_JPY: prophet mae=0.003279
+2026-01-10 16:14:02,884 | INFO | compare.select_model | Model selection completed. Saved: data/models/active_models/forex_daily/frequency=daily/selections_ingest_date=2026-01-10.json
+2026-01-14 15:39:53,985 | INFO | compare.select_model | Selecting best model for pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'] ingest_date=2026-01-14 metric=mae models=['naive', 'sarima', 'prophet']
+2026-01-14 15:39:54,016 | INFO | compare.select_model | Selected for EUR_USD: sarima mae=0.001613
+2026-01-14 15:39:54,023 | INFO | compare.select_model | Selected for GBP_USD: sarima mae=0.002547
+2026-01-14 15:39:54,029 | INFO | compare.select_model | Selected for USD_JPY: prophet mae=0.003294
+2026-01-14 15:39:54,030 | INFO | compare.select_model | Model selection completed. Saved: data/models/active_models/forex_daily/frequency=daily/selections_ingest_date=2026-01-14.json
+2026-01-14T22:51:12+0000 | INFO | compare.select_model | Selecting best model for pairs=['EUR_USD', 'GBP_USD', 'USD_JPY'] ingest_date=2026-01-14 metric=mae models=['naive', 'sarima', 'prophet']
+2026-01-14T22:51:12+0000 | INFO | compare.select_model | Selected for EUR_USD: sarima mae=0.001613
+2026-01-14T22:51:12+0000 | INFO | compare.select_model | Selected for GBP_USD: sarima mae=0.002547
+2026-01-14T22:51:12+0000 | INFO | compare.select_model | Selected for USD_JPY: prophet mae=0.003308
+2026-01-14T22:51:12+0000 | INFO | compare.select_model | Model selection completed. Saved: data/models/active_models/forex_daily/frequency=daily/selections_ingest_date=2026-01-14.json
