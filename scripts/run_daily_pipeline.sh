@@ -33,11 +33,7 @@ spark-submit \
   --master local[*] \
   --name "alpha-vantage-fx-daily-ingest" \
   --conf spark.eventLog.enabled=true \
-<<<<<<< HEAD
   --conf spark.eventLog.dir=/tmp/spark-events \
-=======
-  --conf spark.eventLog.dir=/opt/spark-events \
->>>>>>> origin/mcp-history-server
   --py-files deps.zip \
   spark_jobs/ingest/alpha_vantage_ingest.py
 
