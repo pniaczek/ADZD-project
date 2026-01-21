@@ -8,7 +8,7 @@ source .venv/bin/activate
 
 # --- env ---
 export PYTHONPATH="$(pwd)"
-
+export SPARK_HOME=/opt/spark
 export PATH="$SPARK_HOME/bin:$SPARK_HOME/sbin:$PATH"
 
 RUN_TS="$(date -u +"%Y-%m-%dT%H%M%SZ")"
@@ -33,7 +33,7 @@ spark-submit \
   --master local[*] \
   --name "alpha-vantage-fx-daily-ingest" \
   --conf spark.eventLog.enabled=true \
-  --conf spark.eventLog.dir=/tmp/spark-events \
+  --conf spark.eventLog.dir=/opt/spark-events \
   --py-files deps.zip \
   spark_jobs/ingest/alpha_vantage_ingest.py
 
@@ -44,7 +44,7 @@ spark-submit \
   --master local[*] \
   --name "forex-daily-preprocess-features" \
   --conf spark.eventLog.enabled=true \
-  --conf spark.eventLog.dir=/tmp/spark-events \
+  --conf spark.eventLog.dir=/opt/spark-events \
   --py-files deps.zip \
   spark_jobs/preprocess/forex_daily_preprocess.py
 
