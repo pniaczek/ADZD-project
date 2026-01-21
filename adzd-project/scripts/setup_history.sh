@@ -1,11 +1,14 @@
 #!/bin/bash
 set -e
 
-SPARK_HOME="/usr/local/spark"
+SPARK_HOME="/opt/spark"
 JAVA_HOME="/usr/lib/jvm/java-17-amazon-corretto"
 SERVICE_PATH="/etc/systemd/system/spark-history-server.service"
 USER="ec2-user"
 GROUP="ec2-user"
+
+
+mkdir -p /opt/spark-events
 
 sudo bash -c "cat > $SERVICE_PATH" <<EOF
 [Unit]

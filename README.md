@@ -142,6 +142,21 @@ export PYTHONPATH="$(pwd)"
 bash scripts/run_daily_pipeline.sh
 ```
 
+Seutup cronjob:
+1. 
+```
+sudo yum install cronie -y
+sudo systemctl enable crond
+sudo systemctl start crond
+```
+2. 
+```
+cd adzd-project
+chmod +x scripts/setup_cronjob.sh
+./scripts/setup_cronjob.sh
+```
+
+
 ---
 
 ## 2. Spark History Server
@@ -155,6 +170,8 @@ export SPARK_HOME=/opt/spark
 export PATH="$SPARK_HOME/bin:$SPARK_HOME/sbin:$PATH"
 $SPARK_HOME/sbin/start-history-server.sh
 ```
+
+Alternatywnie skrypt dla automatycznego restartu
 
 Sprawdzenie:
 
