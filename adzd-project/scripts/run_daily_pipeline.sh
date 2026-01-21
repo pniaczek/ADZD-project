@@ -55,6 +55,7 @@ python3 -m pipelines.naive.backtest --pairs all
 python3 -m pipelines.sarima.backtest --pairs all
 python3 -m pipelines.prophet.backtest --pairs all
 
+
 # -----------------------
 # D) MODEL SELECTION (Python)
 # (upewnij się, że to istnieje i obsługuje per pair)
@@ -73,6 +74,7 @@ python3 -m pipelines.prophet.predict --pairs all || true
 # VISUALIZE
 # -----------------------
 python3 -m pipelines.visualize.forecast_vs_actual --pairs all --models naive,sarima,prophet --no-intervals
+
 
 # -----------------------
 # OPTIONAL: MCP agent (jeśli masz agent.py i działa w tym repo)
